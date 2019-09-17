@@ -1,0 +1,181 @@
+----------------------------------------------
+Prueba Invertir Case de palabra 1 -> OK
+----------------------------------------------
+Prueba Invertir Case de palabra 2 -> OK
+----------------------------------------------
+Prueba Invertir Case de palabra 3 -> OK
+----------------------------------------------
+Prueba Invertir Case de palabra 4 -> OK
+----------------------------------------------
+Prueba Invertir Case de palabra 5 -> OK
+----------------------------------------------
+Prueba Invertir Case de palabra 6 -> OK
+----------------------------------------------
+Prueba Invertir Case de palabra 7 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaInvertirCase                                 PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba Islas 1 -> OK
+----------------------------------------------
+Prueba Islas 2 -> OK
+----------------------------------------------
+Prueba Islas 3 -> OK
+----------------------------------------------
+Prueba Islas 4 -> OK
+----------------------------------------------
+Prueba Islas 5 -> OK
+----------------------------------------------
+Prueba Islas 6 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaIslas                                        PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba Ocurrencias Substring 1 -> OK
+----------------------------------------------
+Prueba Ocurrencias Substring 2 -> OK
+----------------------------------------------
+Prueba Ocurrencias Substring 3 -> OK
+----------------------------------------------
+Prueba Ocurrencias Substring 4 -> OK
+----------------------------------------------
+Prueba Ocurrencias Substring 5 -> OK
+----------------------------------------------
+Prueba Ocurrencias Substring 6 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaOcurrenciasSubstring                         PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba ordenar vector de strings 1 -> OK
+----------------------------------------------
+Prueba ordenar vector de strings 2 -> OK
+----------------------------------------------
+Prueba ordenar vector de strings 3 -> OK
+----------------------------------------------
+Prueba ordenar vector de strings 4 -> OK
+----------------------------------------------
+Prueba ordenar vector de strings 5 -> OK
+----------------------------------------------
+Prueba ordenar vector de strings 6 -> OK
+----------------------------------------------
+Prueba ordenar vector de strings 7 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaOrdenarVecStr                                PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba Intercalar Vectores 1 -> OK
+----------------------------------------------
+Prueba Intercalar Vectores 2 -> OK
+----------------------------------------------
+Prueba Intercalar Vectores 3 -> OK
+----------------------------------------------
+Prueba Intercalar Vectores 4 -> OK
+----------------------------------------------
+Prueba Intercalar Vectores 5 -> OK
+----------------------------------------------
+Prueba Intercalar Vectores 6 -> OK
+----------------------------------------------
+Prueba Intercalar Vectores 7 -> OK
+----------------------------------------------
+Prueba Intercalar Vectores 8 -> OK
+----------------------------------------------
+Prueba Intercalar Vectores 9 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaIntercalarVector                             PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba Subconjunto Vector 1 -> OK
+----------------------------------------------
+Prueba Subconjunto Vector 2 -> OK
+----------------------------------------------
+Prueba Subconjunto Vector 3 -> OK
+----------------------------------------------
+Prueba Subconjunto Vector 4 -> OK
+----------------------------------------------
+Prueba Subconjunto Vector 5 -> OK
+----------------------------------------------
+Prueba Subconjunto Vector 6 -> OK
+----------------------------------------------
+Prueba Subconjunto Vector 7 -> OK
+----------------------------------------------
+Prueba Subconjunto Vector 8 -> OK
+----------------------------------------------
+Prueba Subconjunto Vector 9 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaSubconjuntoVector                            PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba split de strings 1 -> OK
+----------------------------------------------
+Prueba split de strings 2 -> OK
+----------------------------------------------
+Prueba split de strings 3 -> OK
+----------------------------------------------
+Prueba split de strings 4 -> OK
+----------------------------------------------
+Prueba split de strings 5 -> OK
+----------------------------------------------
+Prueba split de strings 6 -> OK
+----------------------------------------------
+Prueba split de strings 7 -> OK
+----------------------------------------------
+Prueba split de strings 8 -> OK
+----------------------------------------------
+Prueba split de strings 9 -> OK
+----------------------------------------------
+Prueba split de strings 10 -> OK
+----------------------------------------------
+Prueba split de strings 11 -> OK
+----------------------------------------------
+Prueba split de strings 12 -> OK
+----------------------------------------------
+Prueba split de strings 13 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaSplitStr                                     PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 1 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 2 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 3 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 4 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 5 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 6 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 7 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 8 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 9 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 10 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 11 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 12 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 13 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 14 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 15 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 16 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 17 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 18 -> OK
+----------------------------------------------
+Prueba ordenar vector de int Mergesort 19 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaOrdenarVecIntMergeSort                       PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+PRUEBAS FUNCIONES 
+PRUEBAS FUNCIONES                                RESULTADO SEM3 => CORRECTAS:  8 INCORRECTAS:  0
+PRUEBAS FUNCIONES 

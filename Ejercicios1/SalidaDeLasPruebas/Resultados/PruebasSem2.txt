@@ -1,0 +1,83 @@
+----------------------------------------------
+Prueba Simplificar fraccion 1 -> OK
+----------------------------------------------
+Prueba Simplificar fraccion 2 -> OK
+----------------------------------------------
+Prueba Simplificar fraccion 3 -> OK
+----------------------------------------------
+Prueba Simplificar fraccion 4 -> OK
+----------------------------------------------
+Prueba Simplificar fraccion 5 -> OK
+----------------------------------------------
+Prueba Simplificar fraccion 6 -> OK
+----------------------------------------------
+Prueba Simplificar fraccion 7 -> OK
+----------------------------------------------
+Prueba Simplificar fraccion 8 -> OK
+----------------------------------------------
+Prueba Simplificar fraccion 9 -> OK
+----------------------------------------------
+Prueba Simplificar fraccion 10 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaSimplificar                                  PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba Ocurrencias 123 Repetidos 1 -> OK
+----------------------------------------------
+Prueba Ocurrencias 123 Repetidos 2 -> OK
+----------------------------------------------
+Prueba Ocurrencias 123 Repetidos 3 -> OK
+----------------------------------------------
+Prueba Ocurrencias 123 Repetidos 4 -> OK
+----------------------------------------------
+Prueba Ocurrencias 123 Repetidos 5 -> OK
+----------------------------------------------
+Prueba Ocurrencias 123 Repetidos 6 -> OK
+----------------------------------------------
+Prueba Ocurrencias 123 Repetidos 7 -> OK
+----------------------------------------------
+Prueba Ocurrencias 123 Repetidos 8 -> OK
+----------------------------------------------
+Prueba Ocurrencias 123 Repetidos 9 -> OK
+----------------------------------------------
+Prueba Ocurrencias 123 Repetidos 10 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaOcuerrencias123Repetidos                     PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba Maximo Numero 1 -> OK
+----------------------------------------------
+Prueba Maximo Numero 2 -> OK
+----------------------------------------------
+Prueba Maximo Numero 3 -> OK
+----------------------------------------------
+Prueba Maximo Numero 4 -> OK
+----------------------------------------------
+Prueba Maximo Numero 5 -> OK
+----------------------------------------------
+Prueba Maximo Numero 6 -> OK
+----------------------------------------------
+Prueba Maximo Numero 7 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaMaximoNumero                                 PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba ordenar vector de int 1 -> OK
+----------------------------------------------
+Prueba ordenar vector de int 2 -> OK
+----------------------------------------------
+Prueba ordenar vector de int 3 -> OK
+----------------------------------------------
+Prueba ordenar vector de int 4 -> OK
+----------------------------------------------
+Prueba ordenar vector de int 5 -> OK
+----------------------------------------------
+Prueba ordenar vector de int 6 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaOrdenarVecInt                                PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+PRUEBAS FUNCIONES 
+PRUEBAS FUNCIONES                                RESULTADO SEM2 => CORRECTAS:  4 INCORRECTAS:  0
+PRUEBAS FUNCIONES 

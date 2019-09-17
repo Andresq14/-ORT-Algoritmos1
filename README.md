@@ -3,4 +3,8 @@ ORT - Estructura de Datos y Algoritmos 1 (Plan 2016)
 
 <h5> Licenciatura en Sistemas. <h5>
 
-Ejercicios en C++
+Ejercicios:
+<ul>
+	<li> C </li>
+	<li> C++ </li>
+</ul>

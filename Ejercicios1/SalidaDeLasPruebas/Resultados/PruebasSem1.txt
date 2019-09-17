@@ -1,0 +1,27 @@
+----------------------------------------------
+Prueba Problema A+B nro 1 -> OK
+----------------------------------------------
+Prueba Problema A+B nro 2 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaSuma                                         PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba Imprimir Tabla del numero 1 -> OK
+----------------------------------------------
+Prueba Imprimir Tabla del numero 2 -> OK
+----------------------------------------------
+Prueba Imprimir Tabla del numero 3 -> OK
+----------------------------------------------
+Prueba Imprimir Tabla del numero 4 -> OK
+----------------------------------------------
+Prueba Imprimir Tabla del numero 5 -> OK
+----------------------------------------------
+Prueba Imprimir Tabla del numero 6 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaImprimirTabla                                PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+----------------------------------------------
+PRUEBAS FUNCIONES 
+PRUEBAS FUNCIONES                                RESULTADO SEM1 => CORRECTAS:  2 INCORRECTAS:  0
+PRUEBAS FUNCIONES 
