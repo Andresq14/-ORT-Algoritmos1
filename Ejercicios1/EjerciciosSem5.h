@@ -5,6 +5,7 @@
 using namespace std;
 #include "Definiciones.h"
 
+
 /*
 PRE: Recibe una lista simplemente encadenada
 POS: Elimina n-ésimo elemento de la lista, empezando a contar desde el último nodo. 
@@ -182,5 +183,6 @@ final: 10
 Resultado: (4,5,6,3,4,6,5)
 */
 void moverNodo(NodoLista *&lista, unsigned int inicial, unsigned int final);
+
 
 #endif
