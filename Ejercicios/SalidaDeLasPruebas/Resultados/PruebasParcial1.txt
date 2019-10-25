@@ -1,0 +1,45 @@
+----------------------------------------------
+Prueba Posicion 1 -> OK
+----------------------------------------------
+Prueba Posicion 2 -> OK
+----------------------------------------------
+Prueba Posicion 3 -> OK
+----------------------------------------------
+Prueba Posicion 4 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaPosicion                                     PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba Eliminar Posiciones 1 -> OK
+----------------------------------------------
+Prueba Eliminar Posiciones 2 -> OK
+----------------------------------------------
+Prueba Eliminar Posiciones 3 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaEliminarPosiciones                           PRUEBAS CORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba Nivel de Elemento 1 -> OK
+----------------------------------------------
+Prueba Nivel de Elemento 2 -> OK
+----------------------------------------------
+Prueba Nivel de Elemento 3 -> OK
+----------------------------------------------
+Prueba Nivel de Elemento 4 -> ERROR salida incorrecta 
+	Parametros de entrada: {{1,2,1,#,#,3,#,#,6,7,#,8}}, 1
+	Se esperaba: 3
+	Se recibio:  4
+----------------------------------------------
+PRUEBAS FUNCION PruebaNivelDeElemento                              HAY PRUEBAS INCORRECTAS
+----------------------------------------------
+----------------------------------------------
+Prueba Piso 1 -> OK
+----------------------------------------------
+Prueba Piso 2 -> OK
+----------------------------------------------
+Prueba Piso 3 -> OK
+----------------------------------------------
+Prueba Piso 4 -> OK
+----------------------------------------------
+PRUEBAS FUNCION PruebaPiso                                         PRUEBAS CORRECTAS
+----------------------------------------------

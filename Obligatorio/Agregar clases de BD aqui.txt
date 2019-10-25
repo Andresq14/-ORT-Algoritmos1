@@ -1,0 +1,2 @@
+
+Por ejemplo pueden crear Tabla.h, Tabla.cpp, etc
