@@ -1,0 +1,472 @@
+********* INICIO PRUEBAS ok1*******
+-----------------------------------
+Prueba 0: Se crea la tabla Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 1: Se crea la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 2: Se crea la tabla Carreras
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 3: Se crea la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 4: Se imprimen las tablas en orden alfabetico
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS ok1*******
+
+PRUEBAS FUNCION PRUEBAS ok1                                        HAY 5 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS ok2*******
+-----------------------------------
+Prueba 5: Se crea la tabla a borrar
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 6: Se borra la tabla a borrar
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 7: Se imprimen las tablas
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS ok2*******
+
+PRUEBAS FUNCION PRUEBAS ok2                                        HAY 3 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS ok3*******
+-----------------------------------
+Prueba 8: Se crea la tabla Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 9: Se crea la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 10: Se crea la tabla Carreras
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 11: Se crea la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 12: Se agrega la columa idAlumno a la tabla Alumno como PK
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 13: Se agrega la columna nombre a la tabla alumno
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 14: Se agrega la columna Edad en la tabla alumno
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 15: Se agrega la columna email a la tabla alumno
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 16: Se agrega la columa idCarrera a la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 17: Se imprimen los metadatos de alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 18: Se imprimen los datos de alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 19: Se agrega la columna Nombre a la tabla Materia
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 20: Se agrega la columna idMateria a la tabla Materia como PK
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 21: Se agrega la columna idCarrera a la tabla Materia
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 22: Se imprimen los metadatos de Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 23: Se imprimen los datos de Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 24: Se agrega la columna nombre a la tabla Carrera
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 25: Se agrega la columna idCarrera a la tabla Carrera
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 26: Se imprimen los metadatos de Carreras
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 27: Se imprimen los datos de Carreras
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 28: Se agrega la columa idDocente como PK a la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 29: Se agrega la columna Nombre a la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 30: Se agrega la columna idMateria a la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 31: Se imprimen los metadatos de Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 32: Se imprimen los datos de Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS ok3*******
+
+PRUEBAS FUNCION PRUEBAS ok3                                        HAY 25 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS ok4 dropTable*******
+-----------------------------------
+Prueba 33: Se da de baja la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 34: Se imprimen las tablas
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS ok4 dropTable*******
+
+PRUEBAS FUNCION PRUEBAS ok4 dropTable                              HAY 2 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS ok5 dropCol*******
+-----------------------------------
+Prueba 35: Se da de baja la columna idAlumno en la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 36: Se da de baja la columna eMail en la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 37: Se imprimen los metadatos de alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS ok5 dropCol*******
+
+PRUEBAS FUNCION PRUEBAS ok5 dropCol                                HAY 3 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS ok6*******
+-----------------------------------
+Prueba 38: Se ingresa una tupla a la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 39: Se ingresa una tupla a la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 40: Se ingresa una tupla a la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 41: Se ingresa una tupla a la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 42: Se ingresa una tupla a la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 43: Se imprimen los datos de Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 44: Se ingresa una tupla a la tabla Carreras
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 45: Se ingresa una tupla a la tabla Carreras
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 46: Se ingresa una tupla a la tabla Carreras
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 47: Se imprimen los datos de Carreras
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 48: Se ingresa una tupla en la tabla Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 49: Se ingresa una tupla en la tabla Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 50: Se ingresa una tupla en la tabla Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 51: Se ingresa una tupla en la tabla Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 52: Se ingresa una tupla en la tabla Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 53: Se ingresa una tupla en la tabla Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 54: Se ingresa una tupla en la tabla Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 55: Se ingresa una tupla en la tabla Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 56: Se ingresa una tupla en la tabla Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 57: Se ingresa una tupla en la tabala Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 58: Se imprimen los datos de Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 59: Se ingresa una tupla en la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 60: Se ingresa una tupla en la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 61: Se ingresa una tupla en la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 62: Se ingresa una tupla en la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 63: Se ingresa una tupla en la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 64: Se ingresa una tupla en la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 65: Se ingresa una tupla en la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 66: Se ingresa una tupla en la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 67: Se ingresa una tupla en la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 68: Se ingresa una tupla en la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 69: Se ingresa una tupla en la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 70: Se imprimen los datos de Materias
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 71: Se crea la tabla Nombres
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 72: Se agrega la columna Id a la tabla Nombres
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 73: Se agrega la columna Nombre a la tabla Nombres
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 74: Se ingresa una tupla en la tabla Nombres
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 75: Se ingresa una tupla en la tabla Nombres
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 76: Se ingresa una tupla en la tabla Nombres
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 77: Se ingresa una tupla en la tabla Nombres
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 78: Se da de baja la columna id en la tabla Nombres
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 79: Se imprimen los datos de Nombres sin repetidos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS ok6*******
+
+PRUEBAS FUNCION PRUEBAS ok6                                        HAY 42 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS ok7 deleteFrom*******
+-----------------------------------
+Prueba 80: Se eliminan las tuplas de la tabla alumno sin email
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 81: Se imprimen los datos de la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 82: Se eliminan las tuplas de la tabla Docentes que atienden la especialidad con codigo 2222
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 83: Se imprimen los datos de la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS ok7 deleteFrom*******
+
+PRUEBAS FUNCION PRUEBAS ok7 deleteFrom                             HAY 4 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS ok8 recent*******
+-----------------------------------
+Prueba 84: Se muestran las ultimas tablas modificadas.
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS ok8 recent*******
+
+PRUEBAS FUNCION PRUEBAS ok8 recent                                 HAY 1 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS ok9 join*******
+-----------------------------------
+Prueba 85: Se crea la tabla docentees2
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 86: Se agrega la columa idDocente como PK a la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 87: Se agrega la columna Nombre a la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 88: Se agrega la columna idMateria a la tabla Docentes
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 89: Se inserta una tupla en Docentes2
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 90: Se inserta una tupla en Docentes2
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 91: Se intersectan Docentes y Docentes2
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 92: Se imprimen los datos de la tabla DocentesDeA1
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS ok9 join*******
+
+PRUEBAS FUNCION PRUEBAS ok9 join                                   HAY 8 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS error createTable*******
+-----------------------------------
+Prueba 93: Se crea la tabla alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 94: La tabla Alumnos ya existe
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS error createTable*******
+
+PRUEBAS FUNCION PRUEBAS error createTable                          HAY 2 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS error dropTable*******
+-----------------------------------
+Prueba 95: La tabla alumnos no existe
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS error dropTable*******
+
+PRUEBAS FUNCION PRUEBAS error dropTable                            HAY 1 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS error addCol*******
+-----------------------------------
+Prueba 96: La tabla alumnos no existe
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 97: Se crea la tabla alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 98: Se agrega la columna idAlumno a Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 99: Ya existe una columna con el nombre idAlumno
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 100: Ya existe una columna que es PK
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS error addCol*******
+
+PRUEBAS FUNCION PRUEBAS error addCol                               HAY 5 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS error dropCol*******
+-----------------------------------
+Prueba 101: La tabla alumnos no existe
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 102: Se crea la tabla alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 103: La columna idAlumno No existe
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS error dropCol*******
+
+PRUEBAS FUNCION PRUEBAS error dropCol                              HAY 3 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS error insertInto*******
+-----------------------------------
+Prueba 104: La tabla alumnos no existe
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 105: Se crea una tabla sin columnas
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 106: la tabla no tiene columnas
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 107: Los datos a ingresar estan vacios
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 108: Los datos a ingresar no coinciden con la cantidad de columnas
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 109: Los datos a ingresar no coinciden con la cantidad de columnas
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 110: Se ingresa una tupla a la tabla
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 111: Ya existe una tupla con la PK 1
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 112: No se puede agregar un valor vacio a un campo NOTEMPTY
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 113: No se puede agregar el valor @EMPTY@
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 114: Se crea la tabla Universidades
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 115: Se agrega la columna nombre a la tabla Universidades
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 116: Se agrega la columna direccion a la tabla Universidades
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 117: Se agrega una tupla a la tabla Universidades
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 118: No se puede agregar una tupla identica a una existente
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS error insertInto*******
+
+PRUEBAS FUNCION PRUEBAS error insertInto                           HAY 15 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS error deleteFrom*******
+-----------------------------------
+Prueba 119: No existe la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 120: El campo idMateria no existe en la tabla Alumnos
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS error deleteFrom*******
+
+PRUEBAS FUNCION PRUEBAS error deleteFrom                           HAY 2 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS error join*******
+-----------------------------------
+Prueba 121: La tabla Universidades no existe
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 122: La tabla Universidades no existe
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 123: La tabla Carreras ya existe
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 124: Las tablas tienen distintos nombres y calificadores
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS error join*******
+
+PRUEBAS FUNCION PRUEBAS error join                                 HAY 4 PRUEBAS INCORRECTAS
+
+********* INICIO PRUEBAS error listados*******
+-----------------------------------
+Prueba 125: La tabla Universidades no existe
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+-----------------------------------
+Prueba 126: La tabla Universidades no existe
+ -> ERROR PRUEBA NO_IMPLEMENTADA
+********* FIN PRUEBAS error listados*******
+
+PRUEBAS FUNCION PRUEBAS error listados                             HAY 2 PRUEBAS INCORRECTAS
+
+
+
+----------------
+PRUEBAS FUNCIONES 
+PRUEBAS FUNCIONES RESULTADO ../PruebasEjemploDeUso.txt          => CORRECTAS:  0 INCORRECTAS: 17
+PRUEBAS FUNCIONES 

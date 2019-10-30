@@ -1,0 +1,288 @@
+-!-Ini::PRUEBAS ok1
+
+-!-0::0-OK-NO_IMPLEMENTADA-Se crea la tabla Materias
+
+-!-1::0-OK-NO_IMPLEMENTADA-Se crea la tabla Docentes
+
+-!-2::0-OK-NO_IMPLEMENTADA-Se crea la tabla Carreras
+
+-!-3::0-OK-NO_IMPLEMENTADA-Se crea la tabla Alumnos
+
+-!-4::0-OK-NO_IMPLEMENTADA-Se imprimen las tablas en orden alfabetico
+-!-Fin::PRUEBAS ok1
+-!-Ini::PRUEBAS ok2
+
+-!-5::0-OK-NO_IMPLEMENTADA-Se crea la tabla a borrar
+
+-!-6::0-OK-NO_IMPLEMENTADA-Se borra la tabla a borrar
+
+-!-7::0-OK-NO_IMPLEMENTADA-Se imprimen las tablas
+-!-Fin::PRUEBAS ok2
+-!-Ini::PRUEBAS ok3
+
+-!-8::0-OK-NO_IMPLEMENTADA-Se crea la tabla Materias
+
+-!-9::0-OK-NO_IMPLEMENTADA-Se crea la tabla Docentes
+
+-!-10::0-OK-NO_IMPLEMENTADA-Se crea la tabla Carreras
+
+-!-11::0-OK-NO_IMPLEMENTADA-Se crea la tabla Alumnos
+
+-!-12::0-OK-NO_IMPLEMENTADA-Se agrega la columa idAlumno a la tabla Alumno como PK
+
+-!-13::0-OK-NO_IMPLEMENTADA-Se agrega la columna nombre a la tabla alumno
+
+-!-14::0-OK-NO_IMPLEMENTADA-Se agrega la columna Edad en la tabla alumno
+
+-!-15::0-OK-NO_IMPLEMENTADA-Se agrega la columna email a la tabla alumno
+
+-!-16::0-OK-NO_IMPLEMENTADA-Se agrega la columa idCarrera a la tabla Alumnos
+
+-!-17::0-OK-NO_IMPLEMENTADA-Se imprimen los metadatos de alumnos
+
+-!-18::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de alumnos
+
+-!-19::0-OK-NO_IMPLEMENTADA-Se agrega la columna Nombre a la tabla Materia
+
+-!-20::0-OK-NO_IMPLEMENTADA-Se agrega la columna idMateria a la tabla Materia como PK
+
+-!-21::0-OK-NO_IMPLEMENTADA-Se agrega la columna idCarrera a la tabla Materia
+
+-!-22::0-OK-NO_IMPLEMENTADA-Se imprimen los metadatos de Materias
+
+-!-23::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de Materias
+
+-!-24::0-OK-NO_IMPLEMENTADA-Se agrega la columna nombre a la tabla Carrera
+
+-!-25::0-OK-NO_IMPLEMENTADA-Se agrega la columna idCarrera a la tabla Carrera
+
+-!-26::0-OK-NO_IMPLEMENTADA-Se imprimen los metadatos de Carreras
+
+-!-27::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de Carreras
+
+-!-28::0-OK-NO_IMPLEMENTADA-Se agrega la columa idDocente como PK a la tabla Docentes
+
+-!-29::0-OK-NO_IMPLEMENTADA-Se agrega la columna Nombre a la tabla Docentes
+
+-!-30::0-OK-NO_IMPLEMENTADA-Se agrega la columna idMateria a la tabla Docentes
+
+-!-31::0-OK-NO_IMPLEMENTADA-Se imprimen los metadatos de Docentes
+
+-!-32::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de Docentes
+-!-Fin::PRUEBAS ok3
+-!-Ini::PRUEBAS ok4 dropTable
+
+-!-33::0-OK-NO_IMPLEMENTADA-Se da de baja la tabla Alumnos
+
+-!-34::0-OK-NO_IMPLEMENTADA-Se imprimen las tablas
+-!-Fin::PRUEBAS ok4 dropTable
+-!-Ini::PRUEBAS ok5 dropCol
+
+-!-35::0-OK-NO_IMPLEMENTADA-Se da de baja la columna idAlumno en la tabla Alumnos
+
+-!-36::0-OK-NO_IMPLEMENTADA-Se da de baja la columna eMail en la tabla Alumnos
+
+-!-37::0-OK-NO_IMPLEMENTADA-Se imprimen los metadatos de alumnos
+-!-Fin::PRUEBAS ok5 dropCol
+-!-Ini::PRUEBAS ok6
+
+-!-38::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla a la tabla Alumnos
+
+-!-39::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla a la tabla Alumnos
+
+-!-40::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla a la tabla Alumnos
+
+-!-41::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla a la tabla Alumnos
+
+-!-42::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla a la tabla Alumnos
+
+-!-43::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de Alumnos
+
+-!-44::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla a la tabla Carreras
+
+-!-45::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla a la tabla Carreras
+
+-!-46::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla a la tabla Carreras
+
+-!-47::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de Carreras
+
+-!-48::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Materias
+
+-!-49::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Materias
+
+-!-50::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Materias
+
+-!-51::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Materias
+
+-!-52::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Materias
+
+-!-53::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Materias
+
+-!-54::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Materias
+
+-!-55::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Materias
+
+-!-56::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Materias
+
+-!-57::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabala Materias
+
+-!-58::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de Materias
+
+-!-59::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Docentes
+
+-!-60::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Docentes
+
+-!-61::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Docentes
+
+-!-62::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Docentes
+
+-!-63::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Docentes
+
+-!-64::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Docentes
+
+-!-65::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Docentes
+
+-!-66::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Docentes
+
+-!-67::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Docentes
+
+-!-68::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Docentes
+
+-!-69::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Docentes
+
+-!-70::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de Materias
+
+-!-71::0-OK-NO_IMPLEMENTADA-Se crea la tabla Nombres
+
+-!-72::0-OK-NO_IMPLEMENTADA-Se agrega la columna Id a la tabla Nombres
+
+-!-73::0-OK-NO_IMPLEMENTADA-Se agrega la columna Nombre a la tabla Nombres
+
+-!-74::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Nombres
+
+-!-75::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Nombres
+
+-!-76::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Nombres
+
+-!-77::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla en la tabla Nombres
+
+-!-78::0-OK-NO_IMPLEMENTADA-Se da de baja la columna id en la tabla Nombres
+
+-!-79::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de Nombres sin repetidos
+-!-Fin::PRUEBAS ok6
+-!-Ini::PRUEBAS ok7 deleteFrom
+
+-!-80::0-OK-NO_IMPLEMENTADA-Se eliminan las tuplas de la tabla alumno sin email
+
+-!-81::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de la tabla Alumnos
+
+-!-82::0-OK-NO_IMPLEMENTADA-Se eliminan las tuplas de la tabla Docentes que atienden la especialidad con codigo 2222
+
+-!-83::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de la tabla Docentes
+-!-Fin::PRUEBAS ok7 deleteFrom
+-!-Ini::PRUEBAS ok8 recent
+
+-!-84::0-OK-NO_IMPLEMENTADA-Se muestran las ultimas tablas modificadas.
+-!-Fin::PRUEBAS ok8 recent
+-!-Ini::PRUEBAS ok9 join
+
+-!-85::0-OK-NO_IMPLEMENTADA-Se crea la tabla docentees2
+
+-!-86::0-OK-NO_IMPLEMENTADA-Se agrega la columa idDocente como PK a la tabla Docentes
+
+-!-87::0-OK-NO_IMPLEMENTADA-Se agrega la columna Nombre a la tabla Docentes
+
+-!-88::0-OK-NO_IMPLEMENTADA-Se agrega la columna idMateria a la tabla Docentes
+
+-!-89::0-OK-NO_IMPLEMENTADA-Se inserta una tupla en Docentes2
+
+-!-90::0-OK-NO_IMPLEMENTADA-Se inserta una tupla en Docentes2
+
+-!-91::0-OK-NO_IMPLEMENTADA-Se intersectan Docentes y Docentes2
+
+-!-92::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de la tabla DocentesDeA1
+-!-Fin::PRUEBAS ok9 join
+-!-Ini::PRUEBAS error createTable
+
+-!-93::0-OK-NO_IMPLEMENTADA-Se crea la tabla alumnos
+
+-!-94::0-ERROR-NO_IMPLEMENTADA-La tabla Alumnos ya existe
+-!-Fin::PRUEBAS error createTable
+-!-Ini::PRUEBAS error dropTable
+
+-!-95::0-ERROR-NO_IMPLEMENTADA-La tabla alumnos no existe
+-!-Fin::PRUEBAS error dropTable
+-!-Ini::PRUEBAS error addCol
+
+-!-96::0-ERROR-NO_IMPLEMENTADA-La tabla alumnos no existe
+
+-!-97::0-OK-NO_IMPLEMENTADA-Se crea la tabla alumnos
+
+-!-98::0-OK-NO_IMPLEMENTADA-Se agrega la columna idAlumno a Alumnos
+
+-!-99::0-ERROR-NO_IMPLEMENTADA-Ya existe una columna con el nombre idAlumno
+
+-!-100::0-ERROR-NO_IMPLEMENTADA-Ya existe una columna que es PK
+-!-Fin::PRUEBAS error addCol
+-!-Ini::PRUEBAS error dropCol
+
+-!-101::0-ERROR-NO_IMPLEMENTADA-La tabla alumnos no existe
+
+-!-102::0-OK-NO_IMPLEMENTADA-Se crea la tabla alumnos
+
+-!-103::0-ERROR-NO_IMPLEMENTADA-La columna idAlumno No existe
+-!-Fin::PRUEBAS error dropCol
+-!-Ini::PRUEBAS error insertInto
+
+-!-104::0-ERROR-NO_IMPLEMENTADA-La tabla alumnos no existe
+
+-!-105::0-OK-NO_IMPLEMENTADA-Se crea una tabla sin columnas
+
+-!-106::0-ERROR-NO_IMPLEMENTADA-la tabla no tiene columnas
+
+-!-107::0-ERROR-NO_IMPLEMENTADA-Los datos a ingresar estan vacios
+
+-!-108::0-ERROR-NO_IMPLEMENTADA-Los datos a ingresar no coinciden con la cantidad de columnas
+
+-!-109::0-ERROR-NO_IMPLEMENTADA-Los datos a ingresar no coinciden con la cantidad de columnas
+
+-!-110::0-OK-NO_IMPLEMENTADA-Se ingresa una tupla a la tabla
+
+-!-111::0-ERROR-NO_IMPLEMENTADA-Ya existe una tupla con la PK 1
+
+-!-112::0-ERROR-NO_IMPLEMENTADA-No se puede agregar un valor vacio a un campo NOTEMPTY
+
+-!-113::0-ERROR-NO_IMPLEMENTADA-No se puede agregar el valor @EMPTY@
+
+-!-114::0-OK-NO_IMPLEMENTADA-Se crea la tabla Universidades
+
+-!-115::0-OK-NO_IMPLEMENTADA-Se agrega la columna nombre a la tabla Universidades
+
+-!-116::0-OK-NO_IMPLEMENTADA-Se agrega la columna direccion a la tabla Universidades
+
+-!-117::0-OK-NO_IMPLEMENTADA-Se agrega una tupla a la tabla Universidades
+
+-!-118::0-ERROR-NO_IMPLEMENTADA-No se puede agregar una tupla identica a una existente
+-!-Fin::PRUEBAS error insertInto
+-!-Ini::PRUEBAS error deleteFrom
+
+-!-119::0-ERROR-NO_IMPLEMENTADA-No existe la tabla Alumnos
+
+-!-120::0-ERROR-NO_IMPLEMENTADA-El campo idMateria no existe en la tabla Alumnos
+-!-Fin::PRUEBAS error deleteFrom
+-!-Ini::PRUEBAS error join
+
+-!-121::0-ERROR-NO_IMPLEMENTADA-La tabla Universidades no existe
+
+-!-122::0-ERROR-NO_IMPLEMENTADA-La tabla Universidades no existe
+
+-!-123::0-ERROR-NO_IMPLEMENTADA-La tabla Carreras ya existe
+
+-!-124::0-ERROR-NO_IMPLEMENTADA-Las tablas tienen distintos nombres y calificadores
+-!-Fin::PRUEBAS error join
+-!-Ini::PRUEBAS error listados
+
+-!-125::0-ERROR-NO_IMPLEMENTADA-La tabla Universidades no existe
+
+-!-126::0-ERROR-NO_IMPLEMENTADA-La tabla Universidades no existe
+-!-Fin::PRUEBAS error listados

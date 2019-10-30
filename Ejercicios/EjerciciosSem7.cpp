@@ -31,8 +31,8 @@ int cantNodosEntreNiveles(NodoAB* a, int nivel, int desde, int hasta)
 }
 
 /*
-PRE:
-POST:
+PRE: Recibe un arbol (a) y un dato
+POST: Retorna si y solo si, el dato se encuentra en el arbol
 */
 bool existsInABB(NodoAB* a, int dato)
 {
@@ -45,12 +45,12 @@ bool existsInABB(NodoAB* a, int dato)
 }
 
 /*
-PRE:
-POST:
+PRE: Recibe un arbol y un dato
+POST: Retorna true si en todo el arbol (root), existe un dato complementario que cuya suma de ambos, sea igual a n
 */
 bool sumaABBAux(NodoAB* a, int n, NodoAB* root)
 {
-	if (a == NULL) return NULL;
+	if (a == NULL) return false;
 	if ((a->dato * 2) != n)
 	{
 		bool existe = existsInABB(root, n - a->dato);
@@ -60,8 +60,8 @@ bool sumaABBAux(NodoAB* a, int n, NodoAB* root)
 }
 
 /*
-PRE:
-POST:
+PRE: -
+POST: Retorna el nodo que contiene el valor minimo
 */
 NodoAB*& minInABB(NodoAB*& a) 
 {
@@ -108,7 +108,6 @@ int sumaPorNivelesAux(NodoAG* a, int n)
 PRE:
 POST:
 */
-
 void enNivelAux(NodoAB* a, int k, NodoLista*& l)
 {
 	if (k <= 0) return;
@@ -127,8 +126,55 @@ void enNivelAux(NodoAB* a, int k, NodoLista*& l)
 	enNivelAux(a->izq, k - 1, l);
 }
 
-#pragma endregion
+/*
+PRE:
+POST:
+*/
+void ABtoList(NodoAB* a, int nivel, int hasta, int*& list) {
+	if (a == NULL) return;
+	
+	ABtoList(a->izq, nivel + 1, hasta, list);
+	if (nivel <= hasta) {
+		list[nivel]++;
+	}
+	ABtoList(a->der, nivel + 1, hasta, list);
+}
 
+/*
+PRE:
+POST:
+*/
+void AGtoList(NodoAG* a, int nivel, int hasta, int*& list) {
+	if (a == NULL) return;
+
+	AGtoList(a->ph, nivel + 1, hasta, list);
+	if (nivel <= hasta) {
+		list[nivel]++;
+	}
+	AGtoList(a->sh, nivel, hasta, list);
+}
+
+/*
+PRE:
+POST:
+*/
+int nivelConMasNodos(int* list, int largo)
+{
+	if (list == NULL) return 0;
+
+	int mayor = list[0];
+
+	for (int i = 1; i < largo; i++)
+	{
+		mayor = list[i] > mayor ? list[i] : mayor;
+	}
+
+	for (int i = 0; i < largo; i++)
+	{
+		if (mayor == list[i]) return i;	
+	}
+}
+#pragma endregion
 
 int altura(NodoAB* raiz)
 {
@@ -251,7 +297,13 @@ int sucesor(NodoAB* a, int n)
 
 int nivelMasNodos(NodoAB* raiz, int nivelHasta) 
 {
-	return 0;
+	if (raiz == NULL) return 0;
+	if (nivelHasta < 1) return 0;
+
+	int* list = new int[nivelHasta + 1];
+	ABtoList(raiz, 1, nivelHasta, list);
+	int nivel = nivelConMasNodos(list, nivelHasta + 1);
+	return nivel;
 }
 
 void borrarPares(NodoAB* & a)
@@ -320,9 +372,15 @@ NodoLista* caminoAG(NodoAG *arbolGeneral, int dato)
 
 int nivelConMasNodosAG(NodoAG * arbolGeneral) 
 {
-	// IMPLEMENTAR SOLUCION
-	return 0;
-}
+	if (arbolGeneral == NULL) return 0;
 
+	int largo = alturaAG(arbolGeneral) + 1;
+
+	int* list = new int[largo + 1];
+
+	AGtoList(arbolGeneral, 1, largo, list);
+	int nivel = nivelConMasNodos(list, largo);
+	return nivel;
+}
 
 #endif

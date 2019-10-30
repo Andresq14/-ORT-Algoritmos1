@@ -1,0 +1,8 @@
+-!-Ini::PRUEBAS Propias
+
+-!-0::0-OK-NO_IMPLEMENTADA-Se imprimen las tablas
+
+-!-1::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de Materias
+
+-!-2::0-OK-NO_IMPLEMENTADA-Se imprimen los datos de Alumnos
+-!-Fin::PRUEBAS Propias
