@@ -72,7 +72,8 @@ private:
 protected:
 	// Constructor por defecto
 	Tabla();
-
+	
+	Cadena name;
 
 };
 

@@ -5,38 +5,66 @@
 
 
 BaseDeDatos::BaseDeDatos() {
-	// NO IMPLEMENTADA
+	assert(false);
 }
 
 BaseDeDatos::BaseDeDatos(unsigned int MAX_MODIFICADAS) {
-	// NO IMPLEMENTADA
+	tables = new ListaOrdImp<Tabla>;
 }
 
 BaseDeDatos::BaseDeDatos(const BaseDeDatos &bd) {
-	// NO IMPLEMENTADA
+	assert(false);
+	/*
+		Quiero que el programa se caiga, 
+		dado que el metodo no deberia de utilizarse
+	*/
 }
 
 BaseDeDatos::~BaseDeDatos() {
-	// NO IMPLEMENTADA
+	delete tables;
 }
 
 BaseDeDatos &BaseDeDatos::operator=(const BaseDeDatos &bd) {
 	if (this != &bd) {
-		// NO IMPLEMENTADA
+		assert(false);
 	}
 	return *this;
 }
 
 TipoRetorno BaseDeDatos::createTable(Cadena nombreTabla)
 {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+	if (tables->Existe(nombreTabla))
+	{
+		cout << "ERROR:	No se puede crear la tabla, el nombre ya existe." << endl;
+		return ERROR;
+	}
+
+	Tabla table(nombreTabla);
+	tables->AgregarOrd(table);
+
+	return OK;
 }
 
 TipoRetorno BaseDeDatos::dropTable(Cadena nombreTabla)
 {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+	if (tables->EsVacia()) return OK;
+
+	//TODO
+	/*
+		Cambiar metodo "Recuperar" para que retorne NULL en caso de que no exista
+		y en caso positivo, retorne el nodo, asi no recorrer la lista dos veces.
+	*/
+
+	if (!tables->Existe(nombreTabla))
+	{
+		cout << "No se puede eliminar la tabla, el nombre no existe." << endl;
+		return ERROR;
+	}
+
+	Tabla table = tables->RecuperarInseguro(nombreTabla);
+	tables->Borrar(table);
+	
+	return OK;
 }
 
 TipoRetorno BaseDeDatos::addCol(Cadena nombreTabla, Cadena nombreCol, CalifCol calificadorColumna)
@@ -65,8 +93,19 @@ TipoRetorno BaseDeDatos::deleteFrom(Cadena nombreTabla, Cadena condicionEliminar
 
 TipoRetorno BaseDeDatos::printTables()
 {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+	cout << "Listado de tablas:" << endl << endl;
+
+	if (tables->EsVacia())
+	{
+		cout << "No hay tablas creadas" << endl;
+	}
+	else
+	{
+		for ( Iterador<Tabla> i = tables->GetIterador(); !i.EsFin() ; i++)
+			cout << i.Elemento() << endl;
+	}
+
+	return OK;
 }
 
 TipoRetorno BaseDeDatos::printMetadata(Cadena nombreTabla)

@@ -79,7 +79,8 @@ ListaOrdImp<T>::~ListaOrdImp()
 template <class T>
 void ListaOrdImp<T>::AgregarOrd(const T &e) 
 {
-	if(this->EsVacia())AgregarPpio(e); 
+	if(this->EsVacia())
+		AgregarPpio(e); 
 	else if (e <= ppio->dato ) 
 		AgregarPpio(e);
 	else if (fin->dato <= e)

@@ -19,7 +19,7 @@ public:
 	// Constructor que recibe un string terminado por /0 
 	// y si los operadores de comparacion deben ser case sensitive o no 
 	// (por defecto case-insensitive)
-	Cadena(const char *cad, bool ignoreCase = false);
+	Cadena(const char *cad, bool ignoreCase = true);
 
 	// Constructor copia
 	Cadena(const Cadena &c);

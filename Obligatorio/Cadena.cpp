@@ -25,7 +25,8 @@ Cadena::Cadena(const char *cad, bool ignoreCase) {
 	this->ignoreCase = ignoreCase;
 }
 /****************************************************/
-Cadena::Cadena(){
+Cadena::Cadena()
+{
 	s = new char[1];
 	s[0] = '\0';
 	this->ignoreCase = true;

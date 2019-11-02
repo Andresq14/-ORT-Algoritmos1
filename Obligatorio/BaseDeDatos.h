@@ -4,6 +4,9 @@
 #include "BaseDeDatos.h"
 #include "Cadena.h"
 #include "Tabla.h"
+#include "ListaOrd.h"
+#include "ListaOrdImp.h"
+
 
 /*
 	Todos los métodos retornan un enumerado correspondiente a si la operación
@@ -41,6 +44,8 @@ public:
 
 private:
 	BaseDeDatos();
+
+	ListaOrd<Tabla>* tables;
 
 };
 

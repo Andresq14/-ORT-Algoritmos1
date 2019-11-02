@@ -9,56 +9,50 @@ ostream &operator<<(ostream& out, const Tabla &t) {
 }
 
 Tabla::Tabla() {
-	// NO IMPLEMENTADA
+	//Done
 }
 
 Tabla::Tabla(Cadena &nombreTabla) {
-	// NO IMPLEMENTADA
+	name = nombreTabla;
 }
 
 Tabla::Tabla(const Tabla &t) {
-	// NO IMPLEMENTADA
+	//Copy Paste de Tabla()
+	*this = t;
 }
 
 Tabla::~Tabla() {
-	// NO IMPLEMENTADA
 }
 
 Tabla &Tabla::operator=(const Tabla &t) {
 	if (this != &t) {
-		// NO IMPLEMENTADA
+		name = t.name;
 	}
 	return *this;
 }
 
 bool Tabla::operator==(const Tabla &t) const {
-	// NO IMPLEMENTADA
-	return false;
+	return name == t.name;
 }
 
 bool Tabla::operator!=(const Tabla &t) const {
-	// NO IMPLEMENTADA
-	return false;
+	return name != t.name;
 }
 
 bool Tabla::operator<(const Tabla &t) const {
-	// NO IMPLEMENTADA
-	return false;
+	return name < t.name;
 }
 
 bool Tabla::operator>(const Tabla &t) const {
-	// NO IMPLEMENTADA
-	return false;
+	return name > t.name;
 }
 
 bool Tabla::operator<=(const Tabla &t) const {
-	// NO IMPLEMENTADA
-	return false;
+	return name <= t.name;
 }
 
 bool Tabla::operator>=(const Tabla &t) const {
-	// NO IMPLEMENTADA
-	return false;
+	return name >= t.name;
 }
 
 bool Tabla::sonIguales(const Tabla &t) const
@@ -68,8 +62,7 @@ bool Tabla::sonIguales(const Tabla &t) const
 }
 
 const Cadena &Tabla::GetNombre() const {
-	// NO IMPLEMENTADA
-	return *(new Cadena()); // Esta linea no es correcta, no debería hacer new. Esta asi para que no de warning al no estar implementada.
+	return name;
 }
 
 TipoRetorno Tabla::addCol(Cadena &nombreCol, CalifCol calificadorColumna) {
@@ -97,7 +90,7 @@ void Tabla::printMetadata() {
 }
 
 void Tabla::printDataTable() {
-	// NO IMPLEMENTADA
+	cout << name;
 }
 
 TipoRetorno Tabla::join(Tabla &t1, Tabla &t2) {
