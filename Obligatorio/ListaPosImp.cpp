@@ -198,8 +198,6 @@ T& ListaPosImp<T>::ElementoFin() const
 template <class T>
 T& ListaPosImp<T>::ElementoPos(unsigned int pos) const
 {
-	if (first == NULL)
-		return *new T();
 	if (pos <= 0)
 		return first->dato;
 	if (pos >= length)

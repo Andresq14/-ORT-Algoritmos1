@@ -29,7 +29,6 @@ Columna::Columna(Cadena& nombre)
 Columna::Columna(const Columna& c)
 {
 	//Copy Paste constructor sin parametros
-	qualifier = EMPTY;
 
 	*this = c;
 }
@@ -47,7 +46,10 @@ Columna& Columna::operator=(const Columna& c) {
 }
 
 bool Columna::operator==(const Columna& c) const {
-	return name == c.name;
+	if (c.qualifier == PK)
+		return name == c.name || qualifier == PK;
+	else
+		return name == c.name;
 }
 
 bool Columna::operator!=(const Columna& c) const {

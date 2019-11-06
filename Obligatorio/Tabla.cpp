@@ -16,6 +16,7 @@ Tabla::Tabla()
 Tabla::Tabla(Cadena &nombreTabla) 
 {
 	name = nombreTabla;
+	columns = new ListaPosImp<Columna>;
 }
 
 Tabla::Tabla(const Tabla &t) {
@@ -26,7 +27,7 @@ Tabla::Tabla(const Tabla &t) {
 
 Tabla::~Tabla() 
 {
-	//delete columns;
+	//delete columns; //TODO
 }
 
 Tabla &Tabla::operator=(const Tabla &t) {
@@ -82,16 +83,20 @@ TipoRetorno Tabla::addCol(Cadena &nombreCol, CalifCol calificadorColumna)
 		cout << "ERROR: No se puede agregar la columna, nombreCol ya existe." << endl;
 		return ERROR;
 	}
-	/*if (!columns->EsVacia() && calificadorColumna != EMPTY)
+	/*if (!columns->EsVacia() && calificadorColumna == EMPTY)
 	{
 		cout << "ERROR: No se puede agregar la columna, la tabla ya tiene al menos una tupla y el calificador no es EMPTY." << endl;
 		return ERROR;
 	}*/
-
 	Columna c(nombreCol, calificadorColumna);
 	
+	if (columns->Existe(c))
+	{
+		cout << "ERROR: No se puede agregar la columna, la tabla ya tiene una columna PK." << endl;
+		return ERROR;
+	}
+	
 	columns->AgregarFin(c);
-
 	return OK;
 }
 

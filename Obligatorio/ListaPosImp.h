@@ -57,9 +57,11 @@ public:
 	Iterador<T> GetIterador() const;
 	void Imprimir(ostream& o) const;
 
-protected:
+private:
 	void AgregarPosAux(NodoLista<T>* list, const T& e, unsigned int pos);
 	NodoLista<T>* ElementoPosAux(NodoLista<T>* list, unsigned int pos) const;
+
+protected:
 
 	// Atributos de la clase
 	NodoLista<T>* first;

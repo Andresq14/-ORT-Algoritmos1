@@ -76,10 +76,8 @@ TipoRetorno BaseDeDatos::addCol(Cadena nombreTabla, Cadena nombreCol, CalifCol c
 	}
 
 	Tabla table = tables->RecuperarInseguro(nombreTabla);
-	
-	table.addCol(nombreCol, calificadorColumna);
 
-	return OK;
+	return table.addCol(nombreCol, calificadorColumna);;
 }
 
 TipoRetorno BaseDeDatos::dropCol(Cadena nombreTabla, Cadena nombreCol)
