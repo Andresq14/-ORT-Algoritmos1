@@ -46,7 +46,7 @@ void PruebasTAD::pruebaListaPos()
 	l->AgregarPpio(4);
 	l->AgregarPpio(5);
 
-	cout << *l <<endl;
+	cout << *l << endl;
 	ver3("Imprimo la lista luego de agregar 2 datos al principio");
 
 	

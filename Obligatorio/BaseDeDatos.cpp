@@ -69,8 +69,17 @@ TipoRetorno BaseDeDatos::dropTable(Cadena nombreTabla)
 
 TipoRetorno BaseDeDatos::addCol(Cadena nombreTabla, Cadena nombreCol, CalifCol calificadorColumna)
 {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+	if (!tables->Existe(nombreTabla))
+	{
+		cout << "ERROR: No se puede agregar la columna, nombreTabla no existe." << endl;
+		return ERROR;
+	}
+
+	Tabla table = tables->RecuperarInseguro(nombreTabla);
+	
+	table.addCol(nombreCol, calificadorColumna);
+
+	return OK;
 }
 
 TipoRetorno BaseDeDatos::dropCol(Cadena nombreTabla, Cadena nombreCol)
@@ -110,8 +119,19 @@ TipoRetorno BaseDeDatos::printTables()
 
 TipoRetorno BaseDeDatos::printMetadata(Cadena nombreTabla)
 {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+	if (!tables->Existe(nombreTabla))
+	{
+		cout << "ERROR: No se puede imprimir el esquema, nombreTabla no existe." << endl;
+		return ERROR;
+	}
+
+	cout << "Listado de esquema de la tabla " << nombreTabla << ":" << endl << endl;
+
+	Tabla table = tables->Recuperar(nombreTabla);
+
+	table.printMetadata();
+
+	return OK;
 }
 
 TipoRetorno BaseDeDatos::printDataTable(Cadena nombreTabla)

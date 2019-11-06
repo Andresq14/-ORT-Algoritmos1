@@ -58,7 +58,14 @@ public:
 	void Imprimir(ostream& o) const;
 
 protected:
+	void AgregarPosAux(NodoLista<T>* list, const T& e, unsigned int pos);
+	NodoLista<T>* ElementoPosAux(NodoLista<T>* list, unsigned int pos) const;
+
 	// Atributos de la clase
+	NodoLista<T>* first;
+	NodoLista<T>* last;
+	
+	unsigned int length;
 
 };
 

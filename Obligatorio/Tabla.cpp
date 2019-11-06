@@ -8,25 +8,31 @@ ostream &operator<<(ostream& out, const Tabla &t) {
 	return out;
 }
 
-Tabla::Tabla() {
-	//Done
+Tabla::Tabla() 
+{
+	assert(false);
 }
 
-Tabla::Tabla(Cadena &nombreTabla) {
+Tabla::Tabla(Cadena &nombreTabla) 
+{
 	name = nombreTabla;
 }
 
 Tabla::Tabla(const Tabla &t) {
 	//Copy Paste de Tabla()
+	
 	*this = t;
 }
 
-Tabla::~Tabla() {
+Tabla::~Tabla() 
+{
+	//delete columns;
 }
 
 Tabla &Tabla::operator=(const Tabla &t) {
 	if (this != &t) {
 		name = t.name;
+		columns = t.columns;
 	}
 	return *this;
 }
@@ -65,9 +71,28 @@ const Cadena &Tabla::GetNombre() const {
 	return name;
 }
 
-TipoRetorno Tabla::addCol(Cadena &nombreCol, CalifCol calificadorColumna) {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+const ListaPos<Columna>& Tabla::GetColumnas() const {
+	return *columns;
+}
+
+TipoRetorno Tabla::addCol(Cadena &nombreCol, CalifCol calificadorColumna) 
+{
+	if (columns->Existe(nombreCol))
+	{
+		cout << "ERROR: No se puede agregar la columna, nombreCol ya existe." << endl;
+		return ERROR;
+	}
+	/*if (!columns->EsVacia() && calificadorColumna != EMPTY)
+	{
+		cout << "ERROR: No se puede agregar la columna, la tabla ya tiene al menos una tupla y el calificador no es EMPTY." << endl;
+		return ERROR;
+	}*/
+
+	Columna c(nombreCol, calificadorColumna);
+	
+	columns->AgregarFin(c);
+
+	return OK;
 }
 
 TipoRetorno Tabla::delCol(Cadena &nombreCol) {
@@ -85,12 +110,17 @@ TipoRetorno Tabla::deleteFrom(Cadena &condicionEliminar) {
 	return NO_IMPLEMENTADA;
 }
 
-void Tabla::printMetadata() {
-	// NO IMPLEMENTADA
+void Tabla::printMetadata() 
+{
+	if (columns->EsVacia())
+		cout << "La tabla no tiene columnas." << endl;
+	else
+		for (Iterador<Columna> i = columns->GetIterador(); !i.EsFin(); i++)
+			cout << i.Elemento();
 }
 
 void Tabla::printDataTable() {
-	cout << name;
+	cout << name << endl;
 }
 
 TipoRetorno Tabla::join(Tabla &t1, Tabla &t2) {

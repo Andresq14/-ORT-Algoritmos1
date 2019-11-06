@@ -136,6 +136,7 @@
     <ClInclude Include="Cola.h" />
     <ClInclude Include="ColaArray.h" />
     <ClInclude Include="ColaImp.h" />
+    <ClInclude Include="Columna.h" />
     <ClInclude Include="ConductorPrueba.h" />
     <ClInclude Include="ConductorPruebaObl2.h" />
     <ClInclude Include="Constantes.h" />
@@ -177,6 +178,7 @@
     <ClCompile Include="Cadena.cpp" />
     <ClCompile Include="ColaArray.cpp" />
     <ClCompile Include="ColaImp.cpp" />
+    <ClCompile Include="Columna.cpp" />
     <ClCompile Include="ConductorPrueba.cpp" />
     <ClCompile Include="ConductorPruebaObl2.cpp" />
     <ClCompile Include="EstadisticaPrueba.cpp" />

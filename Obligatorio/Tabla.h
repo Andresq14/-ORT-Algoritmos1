@@ -4,6 +4,9 @@
 #include "Constantes.h"
 #include "Cadena.h"
 #include "CalifCol.h"
+#include "Columna.h"
+#include "ListaPos.h"
+#include "ListaPosImp.h"
 
 class Tabla;
 // Operador de salida de flujo
@@ -39,6 +42,8 @@ public:
 	
 	// Retorna el nombre de la tabla
 	const Cadena &GetNombre() const;
+	// Retorna las columnas de la tabla
+	const ListaPos<Columna>& GetColumnas() const;
 
 	// Agrega la columna a la tabla y retorna OK. 
 	// Si no se puede realizar despliega un mensaje de error y retorna ERROR.
@@ -73,8 +78,9 @@ protected:
 	// Constructor por defecto
 	Tabla();
 	
+	//Atributos
 	Cadena name;
-
+	ListaPos<Columna>* columns;
 };
 
 #endif

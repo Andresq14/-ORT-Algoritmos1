@@ -168,6 +168,9 @@
     <ClInclude Include="Tabla.h">
       <Filter>Base de datos</Filter>
     </ClInclude>
+    <ClInclude Include="Columna.h">
+      <Filter>Base de datos</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Asociacion.cpp">
@@ -252,6 +255,9 @@
       <Filter>Base de datos</Filter>
     </ClCompile>
     <ClCompile Include="Tabla.cpp">
+      <Filter>Base de datos</Filter>
+    </ClCompile>
+    <ClCompile Include="Columna.cpp">
       <Filter>Base de datos</Filter>
     </ClCompile>
   </ItemGroup>
