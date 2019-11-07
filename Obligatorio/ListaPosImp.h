@@ -60,10 +60,12 @@ public:
 private:
 	void AgregarPosAux(NodoLista<T>* list, const T& e, unsigned int pos);
 	NodoLista<T>* ElementoPosAux(NodoLista<T>* list, unsigned int pos) const;
+	unsigned int PosElemento(const T& elem, NodoLista<T>* list, unsigned int pos) const;
 
 protected:
 
 	// Atributos de la clase
+	// Primer elemento tiene posicion 0
 	NodoLista<T>* first;
 	NodoLista<T>* last;
 	

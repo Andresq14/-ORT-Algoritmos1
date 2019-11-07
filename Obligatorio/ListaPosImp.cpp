@@ -125,9 +125,10 @@ void ListaPosImp<T>::AgregarPosAux(NodoLista<T>* list, const T& e, unsigned int 
 		AgregarFin(e);
 	else 
 	{
-		NodoLista<T>* aux = ElementoPosAux(first, pos-1);
-		NodoLista<T>* nodo = new NodoLista<T>(e, aux, aux->sig);
-		aux->sig = nodo;
+		NodoLista<T>* aux = ElementoPosAux(first->sig, (pos - 1)); 
+		NodoLista<T>* nodo = new NodoLista<T>(e, aux->ant, aux); //Nodo, Anterior, Siguiente
+		aux->ant->sig = nodo;
+		aux->ant = nodo;
 		length++;
 	}
 }
@@ -167,7 +168,18 @@ void ListaPosImp<T>::BorrarFin()
 template <class T>
 void ListaPosImp<T>::BorrarPos(unsigned int pos)
 {
-	// NO IMPLEMENTADA
+	if (pos <= 0)
+		BorrarPpio();
+	else if (pos >= (length - 1))
+		BorrarFin();
+	else
+	{
+		NodoLista<T>* borrar = ElementoPosAux(first->sig, (pos - 1));
+		borrar->sig->ant = borrar->ant;
+		borrar->ant->sig = borrar->sig;
+		delete borrar;
+		length--;
+	}
 }
 
 template <class T>
@@ -179,31 +191,38 @@ void ListaPosImp<T>::Borrar(const T& e)
 		BorrarPpio();
 	else if (e == last->dato)
 		BorrarFin();
-	//TODO Buscar elemento y borrarlo
-
+	else
+	{
+		unsigned int pos = PosElemento(e, first->sig, 1);
+		BorrarPos(pos);
+	}
 }
 
 template <class T>
 T& ListaPosImp<T>::ElementoPpio() const
 {
-	return this->first->dato;
+	assert(first != NULL);
+	return first->dato;
 }
 
 template <class T>
 T& ListaPosImp<T>::ElementoFin() const
 {
-	return this->last->dato;
+	assert(last != NULL);
+	return last->dato;
 }
 
 template <class T>
 T& ListaPosImp<T>::ElementoPos(unsigned int pos) const
 {
+	assert(first != NULL);
+
 	if (pos <= 0)
 		return first->dato;
 	if (pos >= length)
 		return last->dato;
 
-	NodoLista<T>* nodo = ElementoPosAux(first, pos);
+	NodoLista<T>* nodo = ElementoPosAux(first->sig, (pos - 1));
 	return nodo->dato;
 }
 
@@ -217,10 +236,28 @@ NodoLista<T>* ListaPosImp<T>::ElementoPosAux(NodoLista<T>* list, unsigned int po
 }
 
 template <class T>
+unsigned int ListaPosImp<T>::PosElemento(const T& elem, NodoLista<T>* list, unsigned int pos) const
+{
+	if (list->dato == elem)
+		return pos;
+	else
+		return PosElemento(elem, list->sig, (pos + 1));
+}
+
+template <class T>
 unsigned int ListaPosImp<T>::Posicion(const T &e) const
 {
-	// NO IMPLEMENTADA
-	return 0;
+	assert(first != NULL);
+
+	if (e == first->dato)
+		return 0;
+	if (e == last->dato)
+		return length;
+	else
+	{
+		unsigned int pos = 1;
+		return PosElemento(e, first->sig, pos);
+	}
 }
 
 template <class T>
