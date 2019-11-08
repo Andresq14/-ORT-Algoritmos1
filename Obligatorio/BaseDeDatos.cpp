@@ -47,22 +47,13 @@ TipoRetorno BaseDeDatos::createTable(Cadena nombreTabla)
 
 TipoRetorno BaseDeDatos::dropTable(Cadena nombreTabla)
 {
-	if (tables->EsVacia()) return OK;
-
-	//TODO
-	/*
-		Cambiar metodo "Recuperar" para que retorne NULL en caso de que no exista
-		y en caso positivo, retorne el nodo, asi no recorrer la lista dos veces.
-	*/
-
 	if (!tables->Existe(nombreTabla))
 	{
-		cout << "No se puede eliminar la tabla, el nombre no existe." << endl;
+		cout << "ERROR: No se puede eliminar la tabla, el nombre no existe." << endl;
 		return ERROR;
 	}
 
-	Tabla table = tables->Recuperar(nombreTabla);
-	tables->Borrar(table);
+	tables->Borrar(nombreTabla);
 	
 	return OK;
 }
@@ -80,14 +71,24 @@ TipoRetorno BaseDeDatos::addCol(Cadena nombreTabla, Cadena nombreCol, CalifCol c
 
 TipoRetorno BaseDeDatos::dropCol(Cadena nombreTabla, Cadena nombreCol)
 {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+	if (!tables->Existe(nombreTabla))
+	{
+		cout << "ERROR: No se puede eliminar la columna, nombreTabla no existe." << endl;
+		return ERROR;
+	}
+	
+	return (tables->RecuperarInseguro(nombreTabla).delCol(nombreCol));
 }
 
 TipoRetorno BaseDeDatos::insertInto(Cadena nombreTabla, Cadena valoresTupla)
 {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+	if (!tables->Existe(nombreTabla))
+	{
+		cout << "ERROR: No se puede agregar la tupla, nombreTabla no existe." << endl;
+		return ERROR;
+	}
+
+	return (tables->RecuperarInseguro(nombreTabla)).insertInto(valoresTupla);
 }
 
 TipoRetorno BaseDeDatos::deleteFrom(Cadena nombreTabla, Cadena condicionEliminar)

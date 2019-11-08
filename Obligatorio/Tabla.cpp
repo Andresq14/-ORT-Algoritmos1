@@ -101,12 +101,23 @@ TipoRetorno Tabla::addCol(Cadena &nombreCol, CalifCol calificadorColumna)
 	return OK;
 }
 
-TipoRetorno Tabla::delCol(Cadena &nombreCol) {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+TipoRetorno Tabla::delCol(Cadena &nombreCol) 
+{
+	if (!columns->Existe(nombreCol))
+	{
+		cout << "ERROR: No se puede eliminar la columna, nombreCol no existe." << endl;
+		return ERROR;
+	}
+
+	columns->Borrar(nombreCol);
+	return OK;
 }
 
-TipoRetorno Tabla::insertInto(Cadena &valoresTupla) {
+TipoRetorno Tabla::insertInto(Cadena &valoresTupla) 
+{
+		
+	
+	
 	// NO IMPLEMENTADA
 	return NO_IMPLEMENTADA;
 }
