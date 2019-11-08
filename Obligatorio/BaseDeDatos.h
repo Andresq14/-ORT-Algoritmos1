@@ -36,9 +36,9 @@ public:
 	TipoRetorno dropCol(Cadena nombreTabla, Cadena nombreCol);
 	TipoRetorno insertInto(Cadena nombreTabla, Cadena valoresTupla);
 	TipoRetorno deleteFrom(Cadena nombreTabla, Cadena condicionEliminar);
-	TipoRetorno printTables();
-	TipoRetorno printMetadata(Cadena nombreTabla);
-	TipoRetorno printDataTable(Cadena nombreTabla);
+	TipoRetorno printTables() const;
+	TipoRetorno printMetadata(Cadena nombreTabla) const;
+	TipoRetorno printDataTable(Cadena nombreTabla) const;
 	TipoRetorno join(Cadena nombreTabla1, Cadena nombreTabla2, Cadena nombreTabla3);
 	TipoRetorno recent();
 

@@ -27,13 +27,13 @@ Tabla::Tabla(const Tabla &t) {
 
 Tabla::~Tabla() 
 {
-	//delete columns; //TODO
+	delete columns;
 }
 
 Tabla &Tabla::operator=(const Tabla &t) {
 	if (this != &t) {
 		name = t.name;
-		columns = t.columns;
+		columns = t.columns->Clon();
 	}
 	return *this;
 }
@@ -88,6 +88,7 @@ TipoRetorno Tabla::addCol(Cadena &nombreCol, CalifCol calificadorColumna)
 		cout << "ERROR: No se puede agregar la columna, la tabla ya tiene al menos una tupla y el calificador no es EMPTY." << endl;
 		return ERROR;
 	}*/
+	
 	Columna c(nombreCol, calificadorColumna);
 	
 	if (columns->Existe(c))

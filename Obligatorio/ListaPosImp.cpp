@@ -121,7 +121,7 @@ void ListaPosImp<T>::AgregarPosAux(NodoLista<T>* list, const T& e, unsigned int 
 {
 	if (pos <= 0 || first == NULL)
 		AgregarPpio(e);
-	else if (pos >= length)
+	else if (pos >= length - 1)
 		AgregarFin(e);
 	else 
 	{
@@ -219,7 +219,7 @@ T& ListaPosImp<T>::ElementoPos(unsigned int pos) const
 
 	if (pos <= 0)
 		return first->dato;
-	if (pos >= length)
+	if (pos >= (length - 1))
 		return last->dato;
 
 	NodoLista<T>* nodo = ElementoPosAux(first->sig, (pos - 1));
@@ -315,13 +315,8 @@ ListaPos<T>* ListaPosImp<T>::Clon() const
 {
 	ListaPos<T>* clon = new ListaPosImp<T>();
 
-	unsigned int index = 0;
-
-	for (Iterador<T> i = this->GetIterador(); !i.EsFin(); i++)
-	{
-		clon->AgregarPos(i.Elemento(), index);
-		index++;
-	}
+	for (Iterador<T> i = this->GetIterador(); !i.EsFin();)
+		clon->AgregarFin(i++);
 
 	return clon;
 }

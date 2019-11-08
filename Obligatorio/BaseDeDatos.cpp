@@ -61,7 +61,7 @@ TipoRetorno BaseDeDatos::dropTable(Cadena nombreTabla)
 		return ERROR;
 	}
 
-	Tabla table = tables->RecuperarInseguro(nombreTabla);
+	Tabla table = tables->Recuperar(nombreTabla);
 	tables->Borrar(table);
 	
 	return OK;
@@ -75,9 +75,7 @@ TipoRetorno BaseDeDatos::addCol(Cadena nombreTabla, Cadena nombreCol, CalifCol c
 		return ERROR;
 	}
 
-	Tabla table = tables->RecuperarInseguro(nombreTabla);
-
-	return table.addCol(nombreCol, calificadorColumna);;
+	return (tables->RecuperarInseguro(nombreTabla)).addCol(nombreCol, calificadorColumna);;
 }
 
 TipoRetorno BaseDeDatos::dropCol(Cadena nombreTabla, Cadena nombreCol)
@@ -98,7 +96,7 @@ TipoRetorno BaseDeDatos::deleteFrom(Cadena nombreTabla, Cadena condicionEliminar
 	return NO_IMPLEMENTADA;
 }
 
-TipoRetorno BaseDeDatos::printTables()
+TipoRetorno BaseDeDatos::printTables() const
 {
 	cout << "Listado de tablas:" << endl << endl;
 
@@ -115,7 +113,7 @@ TipoRetorno BaseDeDatos::printTables()
 	return OK;
 }
 
-TipoRetorno BaseDeDatos::printMetadata(Cadena nombreTabla)
+TipoRetorno BaseDeDatos::printMetadata(Cadena nombreTabla) const
 {
 	if (!tables->Existe(nombreTabla))
 	{
@@ -132,7 +130,7 @@ TipoRetorno BaseDeDatos::printMetadata(Cadena nombreTabla)
 	return OK;
 }
 
-TipoRetorno BaseDeDatos::printDataTable(Cadena nombreTabla)
+TipoRetorno BaseDeDatos::printDataTable(Cadena nombreTabla) const
 {
 	// NO IMPLEMENTADA
 	return NO_IMPLEMENTADA;
