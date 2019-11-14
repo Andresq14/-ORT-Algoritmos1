@@ -5,6 +5,7 @@
 #include "Cadena.h"
 #include "CalifCol.h"
 #include "Columna.h"
+#include "Tupla.h"
 #include "ListaPos.h"
 #include "ListaPosImp.h"
 
@@ -81,6 +82,7 @@ protected:
 	//Atributos
 	Cadena name;
 	ListaPos<Columna>* columns;
+	ListaPos<Tupla>* tuplas;
 };
 
 #endif

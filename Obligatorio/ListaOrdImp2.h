@@ -41,7 +41,7 @@ public:
 
 	const T& Recuperar(const T&) const;
 	T& RecuperarInseguro(const T&) const;
-	bool Existe(const T &e) const;
+	bool Existe(const T& e) const;
 
 	void Vaciar();
 
@@ -55,8 +55,26 @@ public:
 	Iterador<T> GetIterador() const;
 	void Imprimir(ostream& o) const;
 
+private:
+	//Funcionex Auxiliares
+	void AgregarOrdAux(NodoABB<T>*& nodo, const T& e);
+	NodoABB<T>*& MinimoEnABB(NodoABB<T>*& nodo);
+	NodoABB<T>*& MaximoEnABB(NodoABB<T>*& nodo);
+	void ABBToListPos(NodoABB<T>* abb, ListaPos<T>& list) const;
+	const T& MinimoAux(NodoABB<T>* n) const;
+	const T& MaximoAux(NodoABB<T>* n) const;
+	void BorrarNodoRaiz(NodoABB<T>*& n);
+	void BorrarAux(NodoABB<T>*& n, const T& e);
+	void VaciarAux(NodoABB<T>*& n);
+	const T& RecuperarAux(NodoABB<T>* nodo, const T& e) const;
+	T& RecuperarInseguroAux(NodoABB<T>* nodo, const T& e) const;
+	bool ExisteAux(NodoABB<T>* n, const T& e) const;
+
 protected:
 	// Atributos
+	NodoABB<T>* nodo;
+
+	int lenght;
 };
 
 #include "ListaOrdImp2.cpp"

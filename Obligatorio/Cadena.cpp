@@ -169,5 +169,44 @@ char Cadena::operator[] (const unsigned int index)
 	return s[index];
 }
 
+char** Cadena::split(char separador, unsigned int& largoRet)
+{
+	int i = 0;
+	int larRet = 0;
+	char* token, *nextToken;
+	char* copiaStr = new char[strlen(s) + 1];
+	strcpy_s(copiaStr, strlen(s) + 1, s);
+
+	while (s[i] != '\0') {
+		if (s[i] == separador) {
+			larRet++;
+		}
+		i++;
+	}
+
+	i = 0;
+
+	const char sep[] = { separador,'\0' };
+	char** ret = new char* [larRet + 1];
+
+	token = strtok_s(copiaStr, sep, &nextToken);
+
+	while (token != NULL) {
+
+		char* temp = new char[strlen(token) + 1];
+		strcpy_s(temp, strlen(token) + 1, token);
+		ret[i] = temp;
+		token = strtok_s(NULL, sep, &nextToken);
+		i++;
+	}
+
+	largoRet = i;
+
+	if (largoRet < 1) {
+		ret = NULL;
+	}
+
+	return ret;
+}
 
 #endif

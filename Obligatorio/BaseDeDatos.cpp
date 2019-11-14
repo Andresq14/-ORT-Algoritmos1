@@ -3,21 +3,17 @@
 #ifndef BASEDEDATOS_CPP
 #define BASEDEDATOS_CPP
 
-
 BaseDeDatos::BaseDeDatos() {
 	assert(false);
 }
 
 BaseDeDatos::BaseDeDatos(unsigned int MAX_MODIFICADAS) {
-	tables = new ListaOrdImp<Tabla>;
+	tables = new ListaOrdImp2<Tabla>;
 }
 
-BaseDeDatos::BaseDeDatos(const BaseDeDatos &bd) {
+BaseDeDatos::BaseDeDatos(const BaseDeDatos &bd) 
+{
 	assert(false);
-	/*
-		Quiero que el programa se caiga, 
-		dado que el metodo no deberia de utilizarse
-	*/
 }
 
 BaseDeDatos::~BaseDeDatos() {
@@ -87,8 +83,14 @@ TipoRetorno BaseDeDatos::insertInto(Cadena nombreTabla, Cadena valoresTupla)
 		cout << "ERROR: No se puede agregar la tupla, nombreTabla no existe." << endl;
 		return ERROR;
 	}
+	if (valoresTupla.Length() == 0)
+	{
+		cout << "ERROR: No se puede agregar la tupla, valoresTupla es vacio. " << endl;
+		return ERROR;
+	}
 
-	return (tables->RecuperarInseguro(nombreTabla)).insertInto(valoresTupla);
+
+	return tables->RecuperarInseguro(nombreTabla).insertInto(valoresTupla);
 }
 
 TipoRetorno BaseDeDatos::deleteFrom(Cadena nombreTabla, Cadena condicionEliminar)

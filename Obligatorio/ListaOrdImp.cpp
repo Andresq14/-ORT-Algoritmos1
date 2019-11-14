@@ -51,7 +51,7 @@ ListaOrd<T> &ListaOrdImp<T>::operator=(const ListaOrd<T> &l)
 		this->Vaciar();
 
 		for (Iterador<T> i = l.GetIterador(); !i.EsFin();) {
-			AgregarOrd(i++);
+			this->AgregarOrd(i++);
 		}
 	}
 	return *this;
@@ -64,7 +64,7 @@ ListaOrd<T> &ListaOrdImp<T>::operator=(const ListaOrdImp<T> &l)
 		this->Vaciar();
 
 		for (Iterador<T> i = l.GetIterador(); !i.EsFin();) {
-			AgregarOrd(i++);
+			this->AgregarOrd(i++);
 		}
 	}
 	return *this;
@@ -92,7 +92,8 @@ void ListaOrdImp<T>::AgregarOrd(const T &e)
 template <class T>
 void ListaOrdImp<T>::AgregarOrdAux(NodoLista<T> *nodo, const T &e)
 {
-	if (!(nodo->dato < e) || nodo->dato == e) {
+	if (nodo->dato >= e) 
+	{
 		NodoLista<T> *nuevo = new NodoLista<T>(e, nodo->ant, nodo);
 		nodo->ant->sig = nuevo;
 		nodo->ant = nuevo;
@@ -106,8 +107,7 @@ void ListaOrdImp<T>::AgregarOrdAux(NodoLista<T> *nodo, const T &e)
 template <class T>
 void ListaOrdImp<T>::BorrarMinimo() 
 {
-	if (ppio == NULL)
-		return;
+	if (ppio == NULL) return;
 
 	NodoLista<T> *borrar = ppio;
 	ppio = ppio->sig;
@@ -142,6 +142,7 @@ void ListaOrdImp<T>::Borrar(const T &e)
 {
 	if (EsVacia())
 		return;
+
 	if (e == ppio->dato) 
 		BorrarMinimo();
 	else if (e == fin->dato)
@@ -169,14 +170,16 @@ void ListaOrdImp<T>::BorrarAux(NodoLista<T> *nodo, const T &e)
 template <class T>
 const T& ListaOrdImp<T>::Minimo() const 
 {
-	assert(ppio!=NULL);
+	assert(ppio != NULL);
+
 	return ppio->dato;
 }
 
 template <class T>
 const T& ListaOrdImp<T>::Maximo() const 
 {
-	assert(fin!=NULL);
+	assert(fin != NULL);
+
 	return fin->dato;
 }
 

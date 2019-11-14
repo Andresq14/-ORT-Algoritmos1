@@ -22,9 +22,6 @@
     <Filter Include="Pruebas">
       <UniqueIdentifier>{82aca4fb-ba0f-42f2-84d8-e088fd51a42f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Colecciones\Colas">
-      <UniqueIdentifier>{8956dd65-e525-4adf-8e53-ac305fe29c1e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Colecciones\Listas\ListaPos">
       <UniqueIdentifier>{a674ad76-1b87-4884-bb25-2a457994b70d}</UniqueIdentifier>
     </Filter>
@@ -42,6 +39,9 @@
     </Filter>
     <Filter Include="Base de datos">
       <UniqueIdentifier>{45011d8c-39bf-4599-8683-85b33f48a400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Colecciones\Listas\ListaPos\Colas">
+      <UniqueIdentifier>{8956dd65-e525-4adf-8e53-ac305fe29c1e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -85,7 +85,7 @@
       <Filter>Pruebas</Filter>
     </ClInclude>
     <ClInclude Include="Cola.h">
-      <Filter>Colecciones\Colas</Filter>
+      <Filter>Colecciones\Listas\ListaPos\Colas</Filter>
     </ClInclude>
     <ClInclude Include="Constantes.h">
       <Filter>Framework</Filter>
@@ -136,7 +136,7 @@
       <Filter>Framework\ArchivosPrueba</Filter>
     </ClInclude>
     <ClInclude Include="ColaImp.h">
-      <Filter>Colecciones\Colas</Filter>
+      <Filter>Colecciones\Listas\ListaPos\Colas</Filter>
     </ClInclude>
     <ClInclude Include="ListaOrdImp.h">
       <Filter>Colecciones\Listas\ListaOrd</Filter>
@@ -169,6 +169,9 @@
       <Filter>Base de datos</Filter>
     </ClInclude>
     <ClInclude Include="Columna.h">
+      <Filter>Base de datos</Filter>
+    </ClInclude>
+    <ClInclude Include="Tupla.h">
       <Filter>Base de datos</Filter>
     </ClInclude>
   </ItemGroup>
@@ -234,7 +237,7 @@
       <Filter>Framework\ArchivosPrueba</Filter>
     </ClCompile>
     <ClCompile Include="ColaImp.cpp">
-      <Filter>Colecciones\Colas</Filter>
+      <Filter>Colecciones\Listas\ListaPos\Colas</Filter>
     </ClCompile>
     <ClCompile Include="ListaOrdImp.cpp">
       <Filter>Colecciones\Listas\ListaOrd</Filter>
@@ -258,6 +261,9 @@
       <Filter>Base de datos</Filter>
     </ClCompile>
     <ClCompile Include="Columna.cpp">
+      <Filter>Base de datos</Filter>
+    </ClCompile>
+    <ClCompile Include="Tupla.cpp">
       <Filter>Base de datos</Filter>
     </ClCompile>
   </ItemGroup>

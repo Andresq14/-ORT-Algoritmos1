@@ -171,6 +171,7 @@
     <ClInclude Include="Referencia.h" />
     <ClInclude Include="Tabla.h" />
     <ClInclude Include="TipoRetorno.h" />
+    <ClInclude Include="Tupla.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Asociacion.cpp" />
@@ -202,6 +203,7 @@
     <ClCompile Include="PruebasTAD.cpp" />
     <ClCompile Include="Referencia.cpp" />
     <ClCompile Include="Tabla.cpp" />
+    <ClCompile Include="Tupla.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Agregar clases de BD aqui.txt" />

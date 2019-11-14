@@ -6,6 +6,7 @@
 #include "Tabla.h"
 #include "ListaOrd.h"
 #include "ListaOrdImp.h"
+#include "ListaOrdImp2.h"
 
 
 /*

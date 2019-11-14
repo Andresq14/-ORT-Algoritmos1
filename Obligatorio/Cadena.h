@@ -55,6 +55,7 @@ public:
 	// Retorna el caracter en la posicion index
 	char operator[] (const unsigned int index);
 
+	char** split(char separador, unsigned int& largoRet);
 	// SE PUEDEN MODIFICAR O AGREGAR NUEVOS METODOS !!!
 
 protected:

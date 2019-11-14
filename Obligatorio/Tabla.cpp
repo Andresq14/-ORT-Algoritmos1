@@ -17,23 +17,28 @@ Tabla::Tabla(Cadena &nombreTabla)
 {
 	name = nombreTabla;
 	columns = new ListaPosImp<Columna>;
+	tuplas = new ListaPosImp<Tupla>;
 }
 
 Tabla::Tabla(const Tabla &t) {
 	//Copy Paste de Tabla()
-	
+	columns = new ListaPosImp<Columna>;
+	tuplas = new ListaPosImp<Tupla>;
+
 	*this = t;
 }
 
 Tabla::~Tabla() 
 {
 	delete columns;
+	delete tuplas;
 }
 
 Tabla &Tabla::operator=(const Tabla &t) {
 	if (this != &t) {
 		name = t.name;
-		columns = t.columns->Clon();
+		*(columns) = *(t.columns);
+		*(tuplas) = *(t.tuplas);
 	}
 	return *this;
 }
@@ -83,11 +88,11 @@ TipoRetorno Tabla::addCol(Cadena &nombreCol, CalifCol calificadorColumna)
 		cout << "ERROR: No se puede agregar la columna, nombreCol ya existe." << endl;
 		return ERROR;
 	}
-	/*if (!columns->EsVacia() && calificadorColumna == EMPTY)
+	if (!tuplas->EsVacia() && calificadorColumna == NOTEMPTY)
 	{
 		cout << "ERROR: No se puede agregar la columna, la tabla ya tiene al menos una tupla y el calificador no es EMPTY." << endl;
 		return ERROR;
-	}*/
+	}
 	
 	Columna c(nombreCol, calificadorColumna);
 	
@@ -115,11 +120,41 @@ TipoRetorno Tabla::delCol(Cadena &nombreCol)
 
 TipoRetorno Tabla::insertInto(Cadena &valoresTupla) 
 {
-		
-	
-	
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+	unsigned int len = 0;
+	char** split = valoresTupla.split(':', len);
+	TipoRetorno ret = OK;
+	ListaPos<Cadena>* datos = new ListaPosImp<Cadena>();
+
+	if (columns->EsVacia())
+	{
+		cout << "ERROR: No se puede agregar la tupla, nombreTabla no tiene columnas." << endl;
+		return ERROR;
+	}
+	if (len > (columns->CantidadElementos()) )
+	{
+		cout << "ERROR: No se puede agregar la tupla, la cantidad de campos en valoresTupla no coincide con la cantidad de columnas en la tabla." << endl;
+		return ERROR;
+	}
+
+	for (unsigned int i = 0; i < len && ret == OK; i++)
+	{
+		Cadena tup = split[i];
+		datos->AgregarFin(tup);
+	}
+
+	if (ret == OK)
+	{
+		Tupla tupl(datos);
+		tuplas->AgregarFin(tupl);
+	}
+
+	for (unsigned int i = 0; i < len; i++)
+		delete[] split[i];
+
+	delete split;
+	delete datos;
+
+	return ret;
 }
 
 TipoRetorno Tabla::deleteFrom(Cadena &condicionEliminar) {
