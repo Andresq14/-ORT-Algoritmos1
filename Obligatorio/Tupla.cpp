@@ -4,7 +4,6 @@
 #define TUPLA_CPP
 
 ostream& operator<<(ostream& out, const Tupla& t)
-
 {
 	for (Iterador<Cadena> i = t.GetTuplas()->GetIterador(); !i.EsFin();)
 	{

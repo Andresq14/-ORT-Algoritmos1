@@ -156,6 +156,12 @@ TipoRetorno Tabla::insertInto(Cadena &valoresTupla)
 		fin++;
 	}
 
+	if (datos->CantidadElementos() < columns->CantidadElementos() || datos->CantidadElementos() > columns->CantidadElementos())
+	{
+		cout << "ERROR: No se puede agregar la tupla, la cantidad de campos en valoresTupla no coincide con la cantidad de columnas en la tabla." << endl;
+		return ERROR;
+	}
+
 	if (ret == OK)
 	{
 		Tupla tupl(datos);
