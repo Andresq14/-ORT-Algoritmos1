@@ -126,19 +126,12 @@ TipoRetorno Tabla::delCol(Cadena &nombreCol)
 
 TipoRetorno Tabla::insertInto(Cadena &valoresTupla) 
 {
-	unsigned int len = 0;
-	
 	TipoRetorno ret = OK;
 	ListaPos<Cadena>* datos = new ListaPosImp<Cadena>();
 
 	if (columns->EsVacia())
 	{
 		cout << "ERROR: No se puede agregar la tupla, nombreTabla no tiene columnas." << endl;
-		return ERROR;
-	}
-	if (len > (columns->CantidadElementos()) )
-	{
-		cout << "ERROR: No se puede agregar la tupla, la cantidad de campos en valoresTupla no coincide con la cantidad de columnas en la tabla." << endl;
 		return ERROR;
 	}
 
