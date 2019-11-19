@@ -55,7 +55,8 @@ public:
 	// Retorna el caracter en la posicion index
 	char operator[] (const unsigned int index);
 
-	char** split(char separador, unsigned int& largoRet);
+	//Cadena substring(Cadena* c);
+	char* subString(unsigned int& ini, unsigned int fin);
 	// SE PUEDEN MODIFICAR O AGREGAR NUEVOS METODOS !!!
 
 protected:

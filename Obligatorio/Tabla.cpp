@@ -113,15 +113,21 @@ TipoRetorno Tabla::delCol(Cadena &nombreCol)
 		cout << "ERROR: No se puede eliminar la columna, nombreCol no existe." << endl;
 		return ERROR;
 	}
-
+	
+	int pos = columns->Posicion(nombreCol);
 	columns->Borrar(nombreCol);
+	
+	if (!tuplas->EsVacia())
+		for (Iterador<Tupla> i = tuplas->GetIterador(); !i.EsFin(); i++)
+			i.ElementoInseguro().GetTuplasInseguro()->BorrarPos(pos);
+
 	return OK;
 }
 
 TipoRetorno Tabla::insertInto(Cadena &valoresTupla) 
 {
 	unsigned int len = 0;
-	char** split = valoresTupla.split(':', len);
+	
 	TipoRetorno ret = OK;
 	ListaPos<Cadena>* datos = new ListaPosImp<Cadena>();
 
@@ -136,10 +142,18 @@ TipoRetorno Tabla::insertInto(Cadena &valoresTupla)
 		return ERROR;
 	}
 
-	for (unsigned int i = 0; i < len && ret == OK; i++)
+	unsigned int ini = 0;
+	unsigned int fin = 0;
+	
+	while (ini < valoresTupla.Length())
 	{
-		Cadena tup = split[i];
-		datos->AgregarFin(tup);
+		while (fin < valoresTupla.Length() && valoresTupla[fin] != ':') 
+			fin++;
+
+		Cadena c = valoresTupla.subString(ini, fin);
+		datos->AgregarFin(c);
+		ini++;
+		fin++;
 	}
 
 	if (ret == OK)
@@ -147,11 +161,11 @@ TipoRetorno Tabla::insertInto(Cadena &valoresTupla)
 		Tupla tupl(datos);
 		tuplas->AgregarFin(tupl);
 	}
-
+	/*
 	for (unsigned int i = 0; i < len; i++)
-		delete[] split[i];
+		
 
-	delete split;
+	delete split;*/
 	delete datos;
 
 	return ret;
@@ -167,12 +181,31 @@ void Tabla::printMetadata()
 	if (columns->EsVacia())
 		cout << "La tabla no tiene columnas." << endl;
 	else
-		for (Iterador<Columna> i = columns->GetIterador(); !i.EsFin(); i++)
-			cout << i.Elemento();
+		for (Iterador<Columna> i = columns->GetIterador(); !i.EsFin();)
+			cout << i++ << endl;
 }
 
-void Tabla::printDataTable() {
-	cout << name << endl;
+void Tabla::printDataTable() 
+{
+	cout << "Listado de datos de la tabla " << name << ":" << endl << endl;
+
+	for (Iterador<Columna> i = columns->GetIterador(); !i.EsFin();)
+	{
+		cout << i++;
+		if (!i.EsFin())
+			cout << ":";
+		else
+			cout << endl;
+	}
+
+	if (tuplas->EsVacia())
+		cout << "La tabla no tiene tuplas." << endl;
+	else
+	{
+		for (Iterador<Tupla> i = tuplas->GetIterador(); !i.EsFin(); )
+			cout << i++;
+	}
+
 }
 
 TipoRetorno Tabla::join(Tabla &t1, Tabla &t2) {

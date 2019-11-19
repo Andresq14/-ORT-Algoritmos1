@@ -30,6 +30,9 @@ public:
 	bool operator<=(const Tupla& t) const;
 	bool operator>=(const Tupla& t) const;
 
+	const ListaPos<Cadena>* GetTuplas() const;
+	ListaPos<Cadena>* GetTuplasInseguro() const;
+
 private:
 
 protected:

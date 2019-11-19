@@ -4,7 +4,21 @@
 #define TUPLA_CPP
 
 ostream& operator<<(ostream& out, const Tupla& t)
+
 {
+	for (Iterador<Cadena> i = t.GetTuplas()->GetIterador(); !i.EsFin();)
+	{
+		out << i++;
+		
+		if (!i.EsFin())
+			out << ":";
+		else
+			out << endl;
+
+		if (i.ElementoInseguro().Length() == 0)
+			out << "@EMPTY@";
+
+	}
 	return out;
 }
 
@@ -63,5 +77,14 @@ bool Tupla::operator>=(const Tupla& t) const {
 	return tuplas >= t.tuplas;
 }
 
+const ListaPos<Cadena>* Tupla::GetTuplas() const
+{
+	return this->tuplas;
+}
+
+ListaPos<Cadena>* Tupla::GetTuplasInseguro() const
+{
+	return this->tuplas;
+}
 
 #endif // !TUPLA_CPP

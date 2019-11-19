@@ -5,7 +5,7 @@
 
 ostream& operator<<(ostream& out, const Columna& c)
 {
-	out << (c.GetCalificador() == PK ? "*" : "") << c.GetNombre() << endl;
+	out << (c.GetCalificador() == PK ? "*" : "") << c.GetNombre();
 	return out;
 }
 

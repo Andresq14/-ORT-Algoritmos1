@@ -135,8 +135,16 @@ TipoRetorno BaseDeDatos::printMetadata(Cadena nombreTabla) const
 
 TipoRetorno BaseDeDatos::printDataTable(Cadena nombreTabla) const
 {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+	if (!tables->Existe(nombreTabla))
+	{
+		cout << "ERROR: No se pueden imprimir los datos, nombreTabla no existe." << endl;
+		return ERROR;
+	}
+
+	Tabla table(tables->Recuperar(nombreTabla));
+	table.printDataTable();
+
+	return OK;
 }
 
 TipoRetorno BaseDeDatos::join(Cadena nombreTabla1, Cadena nombreTabla2, Cadena nombreTabla3)

@@ -72,7 +72,6 @@ public:
 	// Si no se puede realizar despliega un mensaje de error y retorna ERROR.
 	TipoRetorno join(Tabla &t1, Tabla &t2);
 
-
 private:
 
 protected:
