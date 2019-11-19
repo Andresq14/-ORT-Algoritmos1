@@ -8,3 +8,8 @@ Ejercicios:
 	<li> C </li>
 	<li> C++ </li>
 </ul>
+
+Parcial 1.
+Parcial 2.
+
+Obligatorio.
