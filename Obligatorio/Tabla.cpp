@@ -17,13 +17,13 @@ Tabla::Tabla(Cadena &nombreTabla)
 {
 	name = nombreTabla;
 	columns = new ListaPosImp<Columna>;
-	tuplas = new ListaPosImp<Tupla>;
+	tuplas = new ListaOrdImp<Tupla>;
 }
 
 Tabla::Tabla(const Tabla &t) {
 	//Copy Paste de Tabla()
 	columns = new ListaPosImp<Columna>;
-	tuplas = new ListaPosImp<Tupla>;
+	tuplas = new ListaOrdImp<Tupla>;
 
 	*this = t;
 }
@@ -115,6 +115,7 @@ TipoRetorno Tabla::delCol(Cadena &nombreCol)
 	}
 	
 	int pos = columns->Posicion(nombreCol);
+
 	columns->Borrar(nombreCol);
 	
 	if (!tuplas->EsVacia())
@@ -155,16 +156,17 @@ TipoRetorno Tabla::insertInto(Cadena &valoresTupla)
 		return ERROR;
 	}
 
+	if ( tuplas->Existe(datos) ){
+		cout << "ERROR: No se puede agregar la tupla, ya existe una tupla igual." << endl;
+		return ERROR;
+	}
+	
 	if (ret == OK)
 	{
 		Tupla tupl(datos);
-		tuplas->AgregarFin(tupl);
+		tuplas->AgregarOrd(tupl);
 	}
-	/*
-	for (unsigned int i = 0; i < len; i++)
-		
 
-	delete split;*/
 	delete datos;
 
 	return ret;
