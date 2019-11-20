@@ -86,7 +86,7 @@ void ListaOrdImp<T>::AgregarOrd(const T &e)
 	else if (fin->dato <= e)
 		AgregarFin(e);
 	else
-		AgregarOrdAux(ppio, e);
+		AgregarOrdAux(ppio->sig, e);
 }
 
 template <class T>
