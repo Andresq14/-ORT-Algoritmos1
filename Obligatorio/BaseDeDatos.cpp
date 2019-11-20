@@ -95,8 +95,11 @@ TipoRetorno BaseDeDatos::insertInto(Cadena nombreTabla, Cadena valoresTupla)
 
 TipoRetorno BaseDeDatos::deleteFrom(Cadena nombreTabla, Cadena condicionEliminar)
 {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+	if (!tables->Existe(nombreTabla)) {
+		cout << "ERROR: No se puede eliminar la tupla, nombreTabla no existe." << endl;
+		return ERROR;
+	}	
+	return tables->RecuperarInseguro(nombreTabla).deleteFrom(condicionEliminar);
 }
 
 TipoRetorno BaseDeDatos::printTables() const
