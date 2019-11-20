@@ -16,6 +16,8 @@ public:
 
 	Columna(Cadena& nombreCol);
 
+	Columna(CalifCol calificador);
+
 	//Constructor copia
 	Columna(const Columna& c);
 

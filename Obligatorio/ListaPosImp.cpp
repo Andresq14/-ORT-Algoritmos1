@@ -238,6 +238,8 @@ NodoLista<T>* ListaPosImp<T>::ElementoPosAux(NodoLista<T>* list, unsigned int po
 template <class T>
 unsigned int ListaPosImp<T>::PosElemento(const T& elem, NodoLista<T>* list, unsigned int pos) const
 {
+	if(list == NULL)
+		return length + 1;
 	if (list->dato == elem)
 		return pos;
 	else
@@ -252,7 +254,7 @@ unsigned int ListaPosImp<T>::Posicion(const T &e) const
 	if (e == first->dato)
 		return 0;
 	if (e == last->dato)
-		return length;
+		return length - 1;
 	else
 	{
 		unsigned int pos = 1;

@@ -26,6 +26,12 @@ Columna::Columna(Cadena& nombre)
 	qualifier = EMPTY;
 }
 
+Columna::Columna(CalifCol calificador)
+{
+	name = "Empty";
+	qualifier = calificador;
+}
+
 Columna::Columna(const Columna& c)
 {
 	//Copy Paste constructor sin parametros

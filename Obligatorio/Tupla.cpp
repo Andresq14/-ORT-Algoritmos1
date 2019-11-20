@@ -5,7 +5,7 @@
 
 ostream& operator<<(ostream& out, const Tupla& t)
 {
-	for (Iterador<Cadena> i = t.GetTuplas()->GetIterador(); !i.EsFin();)
+	for (Iterador<Cadena> i = t.GetDatos()->GetIterador(); !i.EsFin();)
 	{
 		out << i++;
 		
@@ -23,67 +23,68 @@ ostream& operator<<(ostream& out, const Tupla& t)
 
 Tupla::Tupla()
 {
-	tuplas = new ListaPosImp<Cadena>();
+	datos = new ListaPosImp<Cadena>();
 }
 
 Tupla::Tupla(ListaPos<Cadena>* dato)
 {
-	tuplas = new ListaPosImp<Cadena>();
-	*(tuplas) = *(dato);
+	datos = new ListaPosImp<Cadena>();
+	*(datos) = *(dato);
 }
 
 Tupla::Tupla(const Tupla& t)
 {
-	tuplas = new ListaPosImp<Cadena>();
+	datos = new ListaPosImp<Cadena>();
 	
 	*this = t;
 }
 
 Tupla::~Tupla()
 {
-	delete tuplas;
+	delete datos;
 }
 
 Tupla& Tupla::operator=(const Tupla& t) {
 	if (this != &t){
-		*(tuplas) = *(t.tuplas);
+		*(datos) = *(t.datos);
 	}
 	return *this;
 }
 
 bool Tupla::operator==(const Tupla& t) const 
 {
-	return tuplas == t.tuplas;
+	return *(datos) == *(t.datos);
 }
 
-bool Tupla::operator!=(const Tupla& t) const {
-	return tuplas != t.tuplas;
+bool Tupla::operator!=(const Tupla& t) const 
+{
+	return datos != t.datos;
 }
 
 bool Tupla::operator<(const Tupla& t) const {
-	return tuplas < t.tuplas;
+	return datos < t.datos;
 }
 
 bool Tupla::operator>(const Tupla& t) const {
-	return tuplas > t.tuplas;
+	return datos > t.datos;
 }
 
 bool Tupla::operator<=(const Tupla& t) const {
-	return tuplas <= t.tuplas;
+	return datos <= t.datos;
 }
 
 bool Tupla::operator>=(const Tupla& t) const {
-	return tuplas >= t.tuplas;
+	return datos >= t.datos;
 }
 
-const ListaPos<Cadena>* Tupla::GetTuplas() const
+const ListaPos<Cadena>* Tupla::GetDatos() const
 {
-	return this->tuplas;
+	return this->datos;
 }
 
-ListaPos<Cadena>* Tupla::GetTuplasInseguro() const
+ListaPos<Cadena>* Tupla::GetDatosInseguro() const
 {
-	return this->tuplas;
+	return this->datos;
 }
 
 #endif // !TUPLA_CPP

@@ -8,8 +8,6 @@
 #include "Tupla.h"
 #include "ListaPos.h"
 #include "ListaPosImp.h"
-#include "ListaOrd.h"
-#include "ListaOrdImp.h"
 
 class Tabla;
 // Operador de salida de flujo
@@ -83,7 +81,7 @@ protected:
 	//Atributos
 	Cadena name;
 	ListaPos<Columna>* columns;
-	ListaOrd<Tupla>* tuplas;
+	ListaPos<Tupla>* tuplas;
 };
 
 #endif

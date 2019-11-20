@@ -17,13 +17,13 @@ Tabla::Tabla(Cadena &nombreTabla)
 {
 	name = nombreTabla;
 	columns = new ListaPosImp<Columna>;
-	tuplas = new ListaOrdImp<Tupla>;
+	tuplas = new ListaPosImp<Tupla>;
 }
 
 Tabla::Tabla(const Tabla &t) {
 	//Copy Paste de Tabla()
 	columns = new ListaPosImp<Columna>;
-	tuplas = new ListaOrdImp<Tupla>;
+	tuplas = new ListaPosImp<Tupla>;
 
 	*this = t;
 }
@@ -120,7 +120,7 @@ TipoRetorno Tabla::delCol(Cadena &nombreCol)
 	
 	if (!tuplas->EsVacia())
 		for (Iterador<Tupla> i = tuplas->GetIterador(); !i.EsFin(); i++)
-			i.ElementoInseguro().GetTuplasInseguro()->BorrarPos(pos);
+			i.ElementoInseguro().GetDatosInseguro()->BorrarPos(pos);
 
 	return OK;
 }
@@ -156,15 +156,53 @@ TipoRetorno Tabla::insertInto(Cadena &valoresTupla)
 		return ERROR;
 	}
 
-	if ( tuplas->Existe(datos) ){
-		cout << "ERROR: No se puede agregar la tupla, ya existe una tupla igual." << endl;
-		return ERROR;
+	for (Iterador<Tupla> i = tuplas->GetIterador(); !i.EsFin(); i++)
+	{
+		if (*i.Elemento().GetDatosInseguro() == *datos )
+		{
+			cout << "ERROR: No se puede agregar la tupla, ya existe una tupla igual." << endl;
+			return ERROR;
+		}
 	}
-	
+
+	for (unsigned int i = 0; i < columns->CantidadElementos(); i++)
+	{
+		if (columns->ElementoPos(i).GetCalificador() != EMPTY && datos->ElementoPos(i).Length() == 0)
+		{
+			cout << "ERROR: No se puede agregar la tupla, no se puede agregar un dato vacio a una columna que no es EMPTY." << endl;
+			return ERROR;
+		}
+		if (datos->ElementoPos(i) == "@EMPTY@")
+		{
+			cout << "ERROR: No se puede agregar la tupla, no se puede insertar el dato @EMPTY@." << endl;
+			return ERROR;
+		}
+	}
+
 	if (ret == OK)
 	{
 		Tupla tupl(datos);
-		tuplas->AgregarOrd(tupl);
+		Columna colPk(PK);
+		int posPK = columns->Posicion(colPk) > columns->CantidadElementos() ? -1 : columns->Posicion(colPk);
+		int pos = 0;
+
+		if (posPK > -1)
+		{
+			for (Iterador<Tupla> i = tuplas->GetIterador(); !i.EsFin(); i++)
+			{
+				if (i.ElementoInseguro().GetDatos()->ElementoPos(posPK) == tupl.GetDatos()->ElementoPos(posPK))
+				{
+					cout << "ERROR: No se puede agregar la tupla, la PK ya existe en la tabla." << endl;
+					return ERROR;
+				}
+				if (i.ElementoInseguro().GetDatos()->ElementoPos(posPK) < tupl.GetDatos()->ElementoPos(posPK))
+					pos++;
+			}
+			tuplas->AgregarPos(tupl, pos);
+		}
+		else
+			tuplas->AgregarFin(tupl);
+
 	}
 
 	delete datos;
@@ -190,6 +228,7 @@ void Tabla::printDataTable()
 {
 	cout << "Listado de datos de la tabla " << name << ":" << endl << endl;
 
+	//Nombre de las Columnas
 	for (Iterador<Columna> i = columns->GetIterador(); !i.EsFin();)
 	{
 		cout << i++;
@@ -199,14 +238,20 @@ void Tabla::printDataTable()
 			cout << endl;
 	}
 
+	ListaPos<Tupla>* sinRepetir = new ListaPosImp<Tupla>();
 	if (tuplas->EsVacia())
 		cout << "La tabla no tiene tuplas." << endl;
 	else
 	{
-		for (Iterador<Tupla> i = tuplas->GetIterador(); !i.EsFin(); )
+		for (unsigned int i = 0; i < tuplas->CantidadElementos(); i++)
+			if (!sinRepetir->Existe(tuplas->ElementoPos(i)))
+				sinRepetir->AgregarFin(tuplas->ElementoPos(i));
+
+		for (Iterador<Tupla> i = sinRepetir->GetIterador(); !i.EsFin(); )
 			cout << i++;
 	}
 
+	delete sinRepetir;
 }
 
 TipoRetorno Tabla::join(Tabla &t1, Tabla &t2) {
