@@ -56,27 +56,6 @@ bool Tupla::operator==(const Tupla& t) const
 	return *(datos) == *(t.datos);
 }
 
-bool Tupla::operator!=(const Tupla& t) const 
-{
-	return datos != t.datos;
-}
-
-bool Tupla::operator<(const Tupla& t) const {
-	return datos < t.datos;
-}
-
-bool Tupla::operator>(const Tupla& t) const {
-	return datos > t.datos;
-}
-
-bool Tupla::operator<=(const Tupla& t) const {
-	return datos <= t.datos;
-}
-
-bool Tupla::operator>=(const Tupla& t) const {
-	return datos >= t.datos;
-}
-
 const ListaPos<Cadena>* Tupla::GetDatos() const
 {
 	return this->datos;

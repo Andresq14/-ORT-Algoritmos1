@@ -22,13 +22,8 @@ public:
 	// Operador de asignacion
 	Tupla& operator=(const Tupla& t);
 
-	// Operadores de comparacion (comparan el nombre de la tabla)
+	// Operadores de comparacion 
 	bool operator==(const Tupla& t) const;
-	bool operator!=(const Tupla& t) const;
-	bool operator<(const Tupla& t) const;
-	bool operator>(const Tupla& t) const;
-	bool operator<=(const Tupla& t) const;
-	bool operator>=(const Tupla& t) const;
 
 	const ListaPos<Cadena>* GetDatos() const;
 	ListaPos<Cadena>* GetDatosInseguro() const;
