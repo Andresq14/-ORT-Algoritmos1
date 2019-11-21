@@ -254,9 +254,54 @@ void Tabla::printDataTable()
 	delete sinRepetir;
 }
 
-TipoRetorno Tabla::join(Tabla &t1, Tabla &t2) {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+TipoRetorno Tabla::join(Tabla &t1, Tabla &t2) 
+{
+	for (Iterador<Columna> i = t1.GetColumnas().GetIterador(); !i.EsFin(); i++)
+	{
+		this->columns->AgregarFin(i.Elemento());
+	}
+	for (Iterador<Columna> i = t2.GetColumnas().GetIterador(); !i.EsFin(); i++)
+	{
+		if(i.Elemento().GetCalificador() != PK)
+			this->columns->AgregarFin(i.Elemento());
+	}
+
+	Columna colPk(PK);
+	int posPkT1 = t1.columns->Posicion(colPk);
+	int posPkT2 = t2.columns->Posicion(colPk);
+
+	Iterador<Tupla> it1 = t1.tuplas->GetIterador();
+	Iterador<Tupla> it2 = t2.tuplas->GetIterador();
+
+	while(!it1.EsFin() && !it2.EsFin())
+	{
+		if (it1.Elemento().GetDatos()->ElementoPos(posPkT1) == it2.Elemento().GetDatos()->ElementoPos(posPkT2))
+		{
+			ListaPos<Cadena>* val1 = it1.Elemento().GetDatosInseguro();
+			ListaPos<Cadena>* val2 = it2.Elemento().GetDatosInseguro();
+
+			it1++;
+			it2++;
+
+			Cadena values;
+
+			for (unsigned int i = 0; i < val1->CantidadElementos(); i++)
+				values = values + val1->ElementoPos(i) + ":";
+			for (unsigned int i = 0; i < val2->CantidadElementos(); i++)
+			{
+				if (i != posPkT2)
+					values = values + val2->ElementoPos(i) + ":";
+			}
+
+			this->insertInto(values);
+		}
+		else if (it1.Elemento().GetDatos()->ElementoPos(posPkT1) < it2.Elemento().GetDatos()->ElementoPos(posPkT2))
+			it1++;
+		else
+			it2++;
+ 	}
+
+	return OK;
 }
 
 #endif
