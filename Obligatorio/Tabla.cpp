@@ -211,8 +211,73 @@ TipoRetorno Tabla::insertInto(Cadena &valoresTupla)
 }
 
 TipoRetorno Tabla::deleteFrom(Cadena &condicionEliminar) {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+
+	if (condicionEliminar == "") {
+		tuplas->Vaciar();
+	}
+
+		unsigned int ini = 0;
+		unsigned int fin = 0;
+
+		while ((fin < condicionEliminar.Length()) && !(condicionEliminar[fin] == '=' || condicionEliminar[fin]== '<' || condicionEliminar[fin] == '>' || condicionEliminar[fin]== '!')){
+		fin++;
+		}
+		Cadena col = condicionEliminar.subString(ini, fin);
+  		Cadena op = condicionEliminar.subString(fin, fin+1);
+		Cadena datoBorrar = condicionEliminar.subString(fin, condicionEliminar.Length());
+
+		
+	
+		if (!columns->Existe(col)) {
+			cout << "ERROR: No se puede eliminar la tupla, la columna en condicionEliminar no pertenece a la tabla" << endl;
+			return ERROR;
+		}
+		int pos = columns->Posicion(col);
+
+		for (Iterador<Tupla> i = tuplas->GetIterador(); !i.EsFin();) {
+			i++;
+			if (op == "=") {
+				Cadena c = i.Elemento().GetDatosInseguro()->ElementoPos(pos);
+				if (c == "") {
+					c = "@EMPTY@";
+				}
+				if (c == datoBorrar) {
+					tuplas->Borrar(i.Elemento().GetDatosInseguro());
+				}
+			}
+			if (op == "!") {
+				Cadena c = i.Elemento().GetDatosInseguro()->ElementoPos(pos);
+				if (c == "") {
+					c = "@EMPTY@";
+				}
+				if (c != datoBorrar) {
+					tuplas->Borrar(i.Elemento().GetDatosInseguro());
+				}
+			}
+			if (op == ">") {
+				Cadena c = i.Elemento().GetDatosInseguro()->ElementoPos(pos);
+				if (c == "") {
+					c = "@EMPTY@";
+				}
+				if (c > datoBorrar) {
+					tuplas->Borrar(i.Elemento().GetDatosInseguro());
+				}
+			}
+			if (op == "<") {
+				Cadena c = i.Elemento().GetDatosInseguro()->ElementoPos(pos);
+				if (c == "") {
+					c = "@EMPTY@";
+				}
+				if (c < datoBorrar) {
+					tuplas->Borrar(i.Elemento().GetDatosInseguro());
+				}
+			}
+
+		
+			
+		}
+			
+	return OK;
 }
 
 void Tabla::printMetadata() 
