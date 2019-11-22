@@ -210,73 +210,54 @@ TipoRetorno Tabla::insertInto(Cadena &valoresTupla)
 	return ret;
 }
 
-TipoRetorno Tabla::deleteFrom(Cadena &condicionEliminar) {
-
-	if (condicionEliminar == "") {
+TipoRetorno Tabla::deleteFrom(Cadena& condicionEliminar)
+{
+	if (condicionEliminar == "")
+	{
 		tuplas->Vaciar();
+		return OK;
 	}
 
-		unsigned int ini = 0;
-		unsigned int fin = 0;
+	unsigned int ini = 0;
+	unsigned int fin = 0;
 
-		while ((fin < condicionEliminar.Length()) && !(condicionEliminar[fin] == '=' || condicionEliminar[fin]== '<' || condicionEliminar[fin] == '>' || condicionEliminar[fin]== '!')){
+	while (fin < condicionEliminar.Length() && !(condicionEliminar[fin] == '=' || condicionEliminar[fin] == '<' || condicionEliminar[fin] == '>' || condicionEliminar[fin] == '!'))
 		fin++;
-		}
-		Cadena col = condicionEliminar.subString(ini, fin);
-  		Cadena op = condicionEliminar.subString(fin, fin+1);
-		Cadena datoBorrar = condicionEliminar.subString(fin, condicionEliminar.Length());
 
-		
-	
-		if (!columns->Existe(col)) {
-			cout << "ERROR: No se puede eliminar la tupla, la columna en condicionEliminar no pertenece a la tabla" << endl;
-			return ERROR;
-		}
-		int pos = columns->Posicion(col);
+	Cadena col = condicionEliminar.subString(ini, fin);
+	Cadena op = condicionEliminar.subString(fin, fin + 1);
+	Cadena datoBorrar = condicionEliminar.subString(fin, condicionEliminar.Length());
 
-		for (Iterador<Tupla> i = tuplas->GetIterador(); !i.EsFin();) {
-			i++;
-			if (op == "=") {
-				Cadena c = i.Elemento().GetDatosInseguro()->ElementoPos(pos);
-				if (c == "") {
-					c = "@EMPTY@";
-				}
-				if (c == datoBorrar) {
-					tuplas->Borrar(i.Elemento().GetDatosInseguro());
-				}
-			}
-			if (op == "!") {
-				Cadena c = i.Elemento().GetDatosInseguro()->ElementoPos(pos);
-				if (c == "") {
-					c = "@EMPTY@";
-				}
-				if (c != datoBorrar) {
-					tuplas->Borrar(i.Elemento().GetDatosInseguro());
-				}
-			}
-			if (op == ">") {
-				Cadena c = i.Elemento().GetDatosInseguro()->ElementoPos(pos);
-				if (c == "") {
-					c = "@EMPTY@";
-				}
-				if (c > datoBorrar) {
-					tuplas->Borrar(i.Elemento().GetDatosInseguro());
-				}
-			}
-			if (op == "<") {
-				Cadena c = i.Elemento().GetDatosInseguro()->ElementoPos(pos);
-				if (c == "") {
-					c = "@EMPTY@";
-				}
-				if (c < datoBorrar) {
-					tuplas->Borrar(i.Elemento().GetDatosInseguro());
-				}
-			}
+	if (!columns->Existe(col))
+	{
+		cout << "ERROR: No se puede eliminar la tupla, la columna en condicionEliminar no pertenece a la tabla" << endl;
+		return ERROR;
+	}
 
-		
-			
-		}
-			
+	int pos = columns->Posicion(col);
+	ListaPos<Tupla>* tuplaToDelete = new ListaPosImp<Tupla>();
+
+	for (Iterador<Tupla> i = tuplas->GetIterador(); !i.EsFin(); i++)
+	{
+		Cadena c = i.ElementoInseguro().GetDatosInseguro()->ElementoPos(pos);
+		if (c == "")
+			c = "@EMPTY@";
+
+		if (op == "=" && c == datoBorrar)
+			tuplaToDelete->AgregarFin( i.Elemento() );
+		else if (op == "!" && c != datoBorrar)
+			tuplaToDelete->AgregarFin( i.Elemento() );
+		else if (op == ">" && c > datoBorrar)
+			tuplaToDelete->AgregarFin( i.Elemento() );
+		else if (op == "<" && c < datoBorrar)
+			tuplaToDelete->AgregarFin( i.Elemento() );
+	}
+
+	for (unsigned int i = 0; i < tuplaToDelete->CantidadElementos(); i++)
+		this->tuplas->Borrar(tuplaToDelete->ElementoPos(i));
+
+	delete tuplaToDelete;
+
 	return OK;
 }
 
@@ -322,14 +303,10 @@ void Tabla::printDataTable()
 TipoRetorno Tabla::join(Tabla &t1, Tabla &t2) 
 {
 	for (Iterador<Columna> i = t1.GetColumnas().GetIterador(); !i.EsFin(); i++)
-	{
 		this->columns->AgregarFin(i.Elemento());
-	}
 	for (Iterador<Columna> i = t2.GetColumnas().GetIterador(); !i.EsFin(); i++)
-	{
 		if(i.Elemento().GetCalificador() != PK)
 			this->columns->AgregarFin(i.Elemento());
-	}
 
 	Columna colPk(PK);
 	int posPkT1 = t1.columns->Posicion(colPk);
@@ -353,10 +330,8 @@ TipoRetorno Tabla::join(Tabla &t1, Tabla &t2)
 			for (unsigned int i = 0; i < val1->CantidadElementos(); i++)
 				values = values + val1->ElementoPos(i) + ":";
 			for (unsigned int i = 0; i < val2->CantidadElementos(); i++)
-			{
 				if (i != posPkT2)
 					values = values + val2->ElementoPos(i) + ":";
-			}
 
 			this->insertInto(values);
 		}
