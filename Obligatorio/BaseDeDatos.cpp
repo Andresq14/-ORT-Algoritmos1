@@ -110,8 +110,8 @@ TipoRetorno BaseDeDatos::insertInto(Cadena nombreTabla, Cadena valoresTupla)
 	return tables->RecuperarInseguro(nombreTabla).insertInto(valoresTupla);
 }
 
-//PRE:
-//POST:
+//PRE: Recibe el nombre de la tabla y la condición a eliminar.
+//POST: Si la tabla existe y se cumple la condicion para alguna de las tuplas, se elimina la misma.
 
 TipoRetorno BaseDeDatos::deleteFrom(Cadena nombreTabla, Cadena condicionEliminar)
 {
@@ -143,8 +143,8 @@ TipoRetorno BaseDeDatos::printTables() const
 	return OK;
 }
 
-//PRE:
-//POST:
+//PRE: Recibe el nombre de la tabla
+//POST: Si la tabla existe imprime el nombre de las columnas, si la tabla no existe devuelve ERROR.
 
 TipoRetorno BaseDeDatos::printMetadata(Cadena nombreTabla) const
 {
@@ -163,8 +163,8 @@ TipoRetorno BaseDeDatos::printMetadata(Cadena nombreTabla) const
 	return OK;
 }
 
-//PRE:
-//POST:
+//PRE: Recibe el nombre de la tabla
+//POST: Si existe a tabla muestra los datos de la misma, si la tabla no existe devuelve ERROR.
 
 TipoRetorno BaseDeDatos::printDataTable(Cadena nombreTabla) const
 {
@@ -180,8 +180,9 @@ TipoRetorno BaseDeDatos::printDataTable(Cadena nombreTabla) const
 	return OK;
 }
 
-//PRE:
-//POST:
+//PRE: Recibe el nombre de las 2 tablas de las cales se hace el JOIN y el nombre de la tabla resultante.
+//POST: En caso que existan las dos tablas y el nombre de la tabla resultante no esta utilizado en otra tabla, se crea la nueva tabla con el resultado de la operacion.
+//      Si no se cumplen estas condiciones, devuelve ERROR.
 
 TipoRetorno BaseDeDatos::join(Cadena nombreTabla1, Cadena nombreTabla2, Cadena nombreTabla3)
 {
