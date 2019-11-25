@@ -23,6 +23,7 @@ private:
 	void PruebasOK();
 
 	void pruebaOK();
+	void pruebaOK1();
 
 	void cargarBaseDeDatos(InterfazDelSistema *interfaz);
 	void cargarTablas(InterfazDelSistema *interfaz);

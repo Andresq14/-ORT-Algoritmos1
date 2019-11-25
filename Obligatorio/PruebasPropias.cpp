@@ -33,6 +33,8 @@ void PruebasPropias::PruebasOK() {
 
 
 	pruebaOK();
+	pruebaOK1();
+
 }
 
 
@@ -41,14 +43,15 @@ void PruebasPropias::PruebasOK() {
 void PruebasPropias::pruebaOK()
 {
 	//cout<<"\n\n";
-	//cout<<"**************** PRUEBA OK6 *******************\n";
+	//cout<<"**************** PRUEBA OK *******************\n";
 	//cout<<"Prueba agregar tuplas a las tablas y listarlas\n";
 	//cout<<"***********************************************\n\n";
 
-	this->mImpresion.iniciarSeccion("PRUEBAS ok6");
+	this->mImpresion.iniciarSeccion("PRUEBAS ok");
 
 	InterfazDelSistema* interfaz = new InterfazDelSistemaImp(10);
 	cargarBaseDeDatos(interfaz);
+	
 	ver2(interfaz->insertInto("Alumnos", "1:Martin:21:martin@gmail.com:1"), OK, "Se ingresa una tupla a la tabla Alumnos");
 	ver2(interfaz->insertInto("Alumnos", "2:Victoria:24::1"), OK, "Se ingresa una tupla a la tabla Alumnos");
 	ver2(interfaz->insertInto("Alumnos", "3:Emilio:25:emilio@gmail.com:2"), OK, "Se ingresa una tupla a la tabla Alumnos");
@@ -100,8 +103,36 @@ void PruebasPropias::pruebaOK()
 
 	delete interfaz;
 
-	this->mImpresion.cerrarSeccion("PRUEBAS ok6");
+	this->mImpresion.cerrarSeccion("PRUEBAS ok");
 }
+
+
+void PruebasPropias::pruebaOK1() {
+
+	//cout<<"\n\n";
+	//cout<<"**************** PRUEBA OK1 *******************\n";
+	//cout<<"Prueba agregar tuplas a las tablas y listarlas\n";
+	//cout<<"***********************************************\n\n";
+
+	this->mImpresion.iniciarSeccion("PRUEBAS ok1");
+
+	InterfazDelSistema* interfaz = new InterfazDelSistemaImp(10);
+	cargarBaseDeDatos(interfaz);
+	cargarTablas(interfaz);
+
+
+	ver2(interfaz->deleteFrom("Alumnos", "eMail=@EMPTY@"), OK, "Se eliminan las tuplas de la tabla alumno sin email");
+	ver2(interfaz->printDataTable("Alumnos"), OK, "Se imprimen los datos de la tabla Alumnos");
+	ver2(interfaz->deleteFrom("Docentes", "idMateria=2222"), OK, "Se eliminan las tuplas de la tabla Docentes que atienden la especialidad con codigo 2222");
+	ver2(interfaz->printDataTable("Docentes"), OK, "Se imprimen los datos de la tabla Docentes");
+	delete interfaz;
+
+	this->mImpresion.cerrarSeccion("PRUEBAS ok1 deleteFrom");
+
+
+}
+
+
 
 
 
@@ -137,6 +168,7 @@ void PruebasPropias::cargarBaseDeDatos(InterfazDelSistema *interfaz)
 
 void PruebasPropias::cargarTablas(InterfazDelSistema *interfaz)
 {
+	cargarBaseDeDatos(interfaz);
 	interfaz->insertInto("Alumnos","1:Martin:23:martin@gmail.com:1");
 	interfaz->insertInto("Alumnos","2:Valeria:24::1");
 	interfaz->insertInto("Alumnos", "3:Emilio:25:emilio@gmail.com:2");
