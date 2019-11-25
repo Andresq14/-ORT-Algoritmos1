@@ -19,6 +19,11 @@ protected:
 private:
 	ManejadorImpresionPrueba mImpresion;
 
+
+	void PruebasOK();
+
+	void pruebaOK();
+
 	void cargarBaseDeDatos(InterfazDelSistema *interfaz);
 	void cargarTablas(InterfazDelSistema *interfaz);
 };

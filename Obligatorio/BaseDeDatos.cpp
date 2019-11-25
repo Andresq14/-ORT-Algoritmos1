@@ -27,6 +27,10 @@ BaseDeDatos &BaseDeDatos::operator=(const BaseDeDatos &bd) {
 	return *this;
 }
 
+//PRE: Recibe el nombre de la tabla a crear.
+//POST: Si la tabla no existe crea la misma, de lo contrario devuelve ERROR.
+
+
 TipoRetorno BaseDeDatos::createTable(Cadena nombreTabla)
 {
 	if (tables->Existe(nombreTabla))
@@ -41,6 +45,9 @@ TipoRetorno BaseDeDatos::createTable(Cadena nombreTabla)
 	return OK;
 }
 
+//PRE: Recibe el nombre de la tabla a borrar.
+//POST: Si la tabla existe borra la misma, de lo contrario devuelve ERROR.
+
 TipoRetorno BaseDeDatos::dropTable(Cadena nombreTabla)
 {
 	if (!tables->Existe(nombreTabla))
@@ -54,6 +61,10 @@ TipoRetorno BaseDeDatos::dropTable(Cadena nombreTabla)
 	return OK;
 }
 
+//PRE: Recibe el nombre de la tabla, el nombre de la columna y su calificador.
+//POST: Sí existe la tabla, no hay una columna con el mismo nombre, si el calificador es PK y la tabla no tiene una columna PK se agrega la columna.
+//      De lo contrario devuelve ERROR.
+
 TipoRetorno BaseDeDatos::addCol(Cadena nombreTabla, Cadena nombreCol, CalifCol calificadorColumna)
 {
 	if (!tables->Existe(nombreTabla))
@@ -65,6 +76,9 @@ TipoRetorno BaseDeDatos::addCol(Cadena nombreTabla, Cadena nombreCol, CalifCol c
 	return (tables->RecuperarInseguro(nombreTabla)).addCol(nombreCol, calificadorColumna);;
 }
 
+//PRE: Recibe el nombre de la tabla y el nombre de la columna.
+//POST: Sí existe la tabla y la columna se elimina la columna. De lo contrario devuelve ERROR.
+
 TipoRetorno BaseDeDatos::dropCol(Cadena nombreTabla, Cadena nombreCol)
 {
 	if (!tables->Existe(nombreTabla))
@@ -75,6 +89,9 @@ TipoRetorno BaseDeDatos::dropCol(Cadena nombreTabla, Cadena nombreCol)
 	
 	return (tables->RecuperarInseguro(nombreTabla).delCol(nombreCol));
 }
+
+//PRE: Recibe el nombre de la tabla y los valores a insertar.
+//POST: Si existe la tabla y los valores que vienen por parametro no estan vacios inserta la tupla.
 
 TipoRetorno BaseDeDatos::insertInto(Cadena nombreTabla, Cadena valoresTupla)
 {
@@ -93,6 +110,9 @@ TipoRetorno BaseDeDatos::insertInto(Cadena nombreTabla, Cadena valoresTupla)
 	return tables->RecuperarInseguro(nombreTabla).insertInto(valoresTupla);
 }
 
+//PRE:
+//POST:
+
 TipoRetorno BaseDeDatos::deleteFrom(Cadena nombreTabla, Cadena condicionEliminar)
 {
 	if (!tables->Existe(nombreTabla)) {
@@ -101,6 +121,10 @@ TipoRetorno BaseDeDatos::deleteFrom(Cadena nombreTabla, Cadena condicionEliminar
 	}	
 	return tables->RecuperarInseguro(nombreTabla).deleteFrom(condicionEliminar);
 }
+
+//PRE: --
+//POST: Imprime los nombres de las tablas de la base de datos, ordenados alfabéticamente de menor a mayor.
+//      Si no hay tablas devuelve “no hay tablas en la base de datos”.
 
 TipoRetorno BaseDeDatos::printTables() const
 {
@@ -119,6 +143,9 @@ TipoRetorno BaseDeDatos::printTables() const
 	return OK;
 }
 
+//PRE:
+//POST:
+
 TipoRetorno BaseDeDatos::printMetadata(Cadena nombreTabla) const
 {
 	if (!tables->Existe(nombreTabla))
@@ -136,6 +163,9 @@ TipoRetorno BaseDeDatos::printMetadata(Cadena nombreTabla) const
 	return OK;
 }
 
+//PRE:
+//POST:
+
 TipoRetorno BaseDeDatos::printDataTable(Cadena nombreTabla) const
 {
 	if (!tables->Existe(nombreTabla))
@@ -149,6 +179,9 @@ TipoRetorno BaseDeDatos::printDataTable(Cadena nombreTabla) const
 
 	return OK;
 }
+
+//PRE:
+//POST:
 
 TipoRetorno BaseDeDatos::join(Cadena nombreTabla1, Cadena nombreTabla2, Cadena nombreTabla3)
 {
@@ -194,6 +227,9 @@ TipoRetorno BaseDeDatos::join(Cadena nombreTabla1, Cadena nombreTabla2, Cadena n
 
 	return OK;
 }
+
+//PRE:
+//POST:
 
 TipoRetorno BaseDeDatos::recent()
 {
