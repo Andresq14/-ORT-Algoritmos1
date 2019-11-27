@@ -7,7 +7,8 @@
 #include "ListaOrd.h"
 #include "ListaOrdImp.h"
 #include "ListaOrdImp2.h"
-
+#include "Cola.h"
+#include "ColaImp.h"
 
 /*
 	Todos los métodos retornan un enumerado correspondiente a si la operación
@@ -47,7 +48,8 @@ private:
 	BaseDeDatos();
 
 	ListaOrd<Tabla>* tables;
-
+	Cola<Tabla>* historic;
+	unsigned int max;
 };
 
 #endif

@@ -2,6 +2,8 @@
 #define COLAIMP_H
 
 #include "Cola.h"
+#include "ListaPos.h"
+#include "ListaPosImp.h"
 
 template <class T>
 class ColaImp : public Cola<T>{
@@ -39,8 +41,7 @@ public:
 
 private:
 	// Definir atributos de la clase
-	
-	
+	ListaPos<T>* cola;
 };
 
 #include "ColaImp.cpp"

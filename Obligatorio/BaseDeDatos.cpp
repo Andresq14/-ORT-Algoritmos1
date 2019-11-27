@@ -9,6 +9,8 @@ BaseDeDatos::BaseDeDatos() {
 
 BaseDeDatos::BaseDeDatos(unsigned int MAX_MODIFICADAS) {
 	tables = new ListaOrdImp2<Tabla>;
+	historic = new ColaImp<Tabla>;	
+	max = MAX_MODIFICADAS;
 }
 
 BaseDeDatos::BaseDeDatos(const BaseDeDatos &bd) 
@@ -73,7 +75,9 @@ TipoRetorno BaseDeDatos::addCol(Cadena nombreTabla, Cadena nombreCol, CalifCol c
 		return ERROR;
 	}
 
-	return (tables->RecuperarInseguro(nombreTabla)).addCol(nombreCol, calificadorColumna);;
+	historic->Encolar(nombreTabla);
+
+	return (tables->RecuperarInseguro(nombreTabla)).addCol(nombreCol, calificadorColumna);
 }
 
 //PRE: Recibe el nombre de la tabla y el nombre de la columna.
@@ -87,6 +91,8 @@ TipoRetorno BaseDeDatos::dropCol(Cadena nombreTabla, Cadena nombreCol)
 		return ERROR;
 	}
 	
+	historic->Encolar(nombreTabla);
+
 	return (tables->RecuperarInseguro(nombreTabla).delCol(nombreCol));
 }
 
@@ -106,6 +112,7 @@ TipoRetorno BaseDeDatos::insertInto(Cadena nombreTabla, Cadena valoresTupla)
 		return ERROR;
 	}
 
+	historic->Encolar(nombreTabla);
 
 	return tables->RecuperarInseguro(nombreTabla).insertInto(valoresTupla);
 }
@@ -119,6 +126,9 @@ TipoRetorno BaseDeDatos::deleteFrom(Cadena nombreTabla, Cadena condicionEliminar
 		cout << "ERROR: No se puede eliminar la tupla, nombreTabla no existe." << endl;
 		return ERROR;
 	}	
+
+	historic->Encolar(nombreTabla);
+
 	return tables->RecuperarInseguro(nombreTabla).deleteFrom(condicionEliminar);
 }
 
@@ -213,12 +223,23 @@ TipoRetorno BaseDeDatos::join(Cadena nombreTabla1, Cadena nombreTabla2, Cadena n
 
 	Columna col1(tab1.GetColumnas().ElementoPos(posPkTab1));
 	Columna col2(tab2.GetColumnas().ElementoPos(posPkTab2));
-
+	
 	if (col1.GetNombre() != col2.GetNombre())
 	{
 		cout << "ERROR: No se puede hacer join, nombreTabla1 y nombreTabla2 no tienen el mismo nombre de columna PK." << endl;
 		return ERROR;
 	}
+
+	for (Iterador<Columna> i = tab1.GetColumnas().GetIterador(); !i.EsFin(); i++)
+	{
+		if(i.Elemento().GetCalificador() != PK)
+			if (tab2.GetColumnas().Existe(i.Elemento()))
+			{
+				cout << "ERROR: No se puede hacer join, nombreTabla1 y nombreTabla2 comparten un nombre de columna distinto a la PK." << endl;
+				return ERROR;
+			}
+	}
+	
 
 	Tabla tab3(nombreTabla3);
 	TipoRetorno ret = tab3.join(tab1, tab2);
@@ -229,13 +250,35 @@ TipoRetorno BaseDeDatos::join(Cadena nombreTabla1, Cadena nombreTabla2, Cadena n
 	return OK;
 }
 
-//PRE:
-//POST:
-
 TipoRetorno BaseDeDatos::recent()
 {
-	// NO IMPLEMENTADA
-	return NO_IMPLEMENTADA;
+	cout << "Listado de tablas recientes:" << endl;
+
+	if (this->historic->EsVacia())
+	{
+		cout << "No hay tablas modificadas recientemente." << endl;
+	}
+	else
+	{
+		Cola<Tabla>* col = this->historic;
+		ListaPos<Tabla>* lis = new ListaPosImp<Tabla>;
+
+		int len = col->CantidadElementos() > max ? max : col->CantidadElementos();
+
+		for (int i = 0; i < len; i++)
+		{
+			lis->AgregarFin(col->Desencolar());
+		}
+		for (unsigned int i = 0; i < lis->CantidadElementos(); i++)
+		{
+			cout << lis->ElementoPos(i) << endl;
+		}
+
+		delete col;
+		delete lis;
+	}
+
+	return OK;
 }
 
 

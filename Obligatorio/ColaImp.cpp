@@ -11,40 +11,47 @@ ostream &operator<<(ostream& out, const ColaImp<T> &c) {
 
 template <class T>
 ColaImp<T>::ColaImp(){
-	// NO IMPLEMENTADA
+	this->cola = new ListaPosImp<T>();
 }
 
 template <class T>
 ColaImp<T>::ColaImp(const Cola<T> &c){
-	// NO IMPLEMENTADA
+	this->cola = cola = new ListaPosImp<T>();
+
+	*this = c;
 }
 
 template <class T>
 ColaImp<T>::ColaImp(const ColaImp<T> &c){
-	// NO IMPLEMENTADA
+	this->cola = cola = new ListaPosImp<T>();
+
+	*this = c;
 }
 
 template <class T>
 Cola<T> & ColaImp<T>::operator=(const Cola<T> &c){
-	// NO IMPLEMENTADA
+	if (this != &c) {
+		*this = c;
+	}
 	return *this;
 }
 
 template <class T>
 Cola<T> & ColaImp<T>::operator=(const ColaImp<T> &c){
-	// NO IMPLEMENTADA
+	if (this != &c) {
+		*(cola) = *(c.cola);
+	}
 	return *this;
 }
 
 template <class T>
 bool ColaImp<T>::operator==(const Cola<T>& c) const{
-	// NO IMPLEMENTADA
-	return false;
+	return true;
 }
 
 template <class T>
 ColaImp<T>::~ColaImp(){
-	// NO IMPLEMENTADA
+	delete cola;
 }
 
 template<class T>
@@ -54,54 +61,69 @@ Cola<T>* ColaImp<T>::CrearVacia() const {
 
 template <class T>
 void ColaImp<T>::Encolar(const T &e){
-	// NO IMPLEMENTADA
+	if (this->cola->Existe(e))
+	{
+		this->cola->Borrar(e);
+		this->cola->AgregarPpio(e);
+	}
+	else if (this->EsLlena())
+	{
+		this->cola->BorrarFin();
+		this->cola->AgregarPpio(e);
+	}
+	else
+	{
+		this->cola->AgregarPpio(e);
+	}
 }
 
 template <class T>
 T& ColaImp<T>::Principio()const{
-	// NO IMPLEMENTADA
-	return *new T();
+	assert(!EsVacia());
+
+	return this->cola->ElementoPpio();
 }
 
 template <class T>
 T ColaImp<T>::Desencolar(){
-	// NO IMPLEMENTADA
-	return *new T();
+	T elem = Principio();
+	this->cola->BorrarPpio();
+	return elem;
 }
 
 template <class T>
 void ColaImp<T>::Vaciar(){
-	// NO IMPLEMENTADA
+	this->cola->Vaciar();
 }
 
 template <class T>
 unsigned int ColaImp<T>::CantidadElementos()const{
-	// NO IMPLEMENTADA
-	return 0;
+	return this->cola->CantidadElementos();
 }
 
 template <class T>
 bool ColaImp<T>::EsVacia() const{
-	// NO IMPLEMENTADA
-	return true;
+	return this->cola->EsVacia();
 }
 
 template <class T>
 bool ColaImp<T>::EsLlena() const{
-	// NO IMPLEMENTADA
 	return false;
 }
 
 template <class T>
 Cola<T>* ColaImp<T>::Clon()const{
-	// NO IMPLEMENTADA
-	return new ColaImp<T>();
+	Cola<T>* clon = new ColaImp<T>();
+
+	for (Iterador<T> i = this->cola->GetIterador(); !i.EsFin();)
+		clon->Encolar(i++);
+
+	return clon;
 }
 
 template <class T>
 void ColaImp<T>::Imprimir(ostream& o)const{
-	// NO IMPLEMENTADA
-	// en luegar de hacer cout << ... poner o << ...
+	this->cola->Imprimir(o);
 }
 
 #endif
