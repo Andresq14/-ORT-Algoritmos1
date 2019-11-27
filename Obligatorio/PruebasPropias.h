@@ -21,9 +21,17 @@ private:
 
 
 	void PruebasOK();
+	void PruebasERROR();
 
-	void pruebaOK();
-	void pruebaOK1();
+	//void pruebaOK();
+	//void pruebaOK1();
+
+	void pruebasERROR1();
+	void pruebasERROR2();
+	void pruebasERROR3();
+	void pruebasERROR4();
+	void pruebasERROR5();
+	void pruebasERROR6();
 
 	void cargarBaseDeDatos(InterfazDelSistema *interfaz);
 	void cargarTablas(InterfazDelSistema *interfaz);
