@@ -69,7 +69,11 @@ bool Tabla::operator>=(const Tabla &t) const {
 
 bool Tabla::sonIguales(const Tabla &t) const
 {
-	// NO IMPLEMENTADA
+	if (*columns == *t.columns)
+		return true;
+	if (*tuplas == *t.tuplas)
+		return true;
+
 	return false;
 }
 
