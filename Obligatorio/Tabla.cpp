@@ -244,23 +244,24 @@ TipoRetorno Tabla::deleteFrom(Cadena& condicionEliminar)
 	for (Iterador<Tupla> i = tuplas->GetIterador(); !i.EsFin(); i++)
 	{
 		Cadena c = i.ElementoInseguro().GetDatosInseguro()->ElementoPos(pos);
+		
 		if (c == "")
 			c = "@EMPTY@";
 
 		if (op == "=" && c == datoBorrar)
-			tuplaToDelete->AgregarFin( i.Elemento() );
+			tuplasBorrar->AgregarFin( i.Elemento() );
 		else if (op == "!" && c != datoBorrar)
-			tuplaToDelete->AgregarFin( i.Elemento() );
+			tuplasBorrar->AgregarFin( i.Elemento() );
 		else if (op == ">" && c > datoBorrar)
-			tuplaToDelete->AgregarFin( i.Elemento() );
+			tuplasBorrar->AgregarFin( i.Elemento() );
 		else if (op == "<" && c < datoBorrar)
-			tuplaToDelete->AgregarFin( i.Elemento() );
+			tuplasBorrar->AgregarFin( i.Elemento() );
 	}
 
-	for (unsigned int i = 0; i < tuplaToDelete->CantidadElementos(); i++)
-		this->tuplas->Borrar(tuplaToDelete->ElementoPos(i));
+	for (unsigned int i = 0; i < tuplasBorrar->CantidadElementos(); i++)
+		this->tuplas->Borrar(tuplasBorrar->ElementoPos(i));
 
-	delete tuplaToDelete;
+	delete tuplasBorrar;
 
 	return OK;
 }

@@ -20,6 +20,7 @@ BaseDeDatos::BaseDeDatos(const BaseDeDatos &bd)
 
 BaseDeDatos::~BaseDeDatos() {
 	delete tables;
+	delete historic;
 }
 
 BaseDeDatos &BaseDeDatos::operator=(const BaseDeDatos &bd) {
@@ -31,11 +32,13 @@ BaseDeDatos &BaseDeDatos::operator=(const BaseDeDatos &bd) {
 
 TipoRetorno BaseDeDatos::createTable(Cadena nombreTabla)
 {
+	/*
+	Validacion no confirmada 
 	if (nombreTabla.Length() < 1)
 	{
 		cout << "ERROR:	No se puede crear la tabla, no tiene nombre." << endl;
 		return ERROR;
-	}
+	}*/
 	if (tables->Existe(nombreTabla))
 	{
 		cout << "ERROR:	No se puede crear la tabla, el nombre ya existe." << endl;
@@ -68,11 +71,14 @@ TipoRetorno BaseDeDatos::addCol(Cadena nombreTabla, Cadena nombreCol, CalifCol c
 		cout << "ERROR: No se puede agregar la columna, nombreTabla no existe." << endl;
 		return ERROR;
 	}
+	
+	/*
+	Validacion no confirmada
 	if (nombreCol.Length() < 1)
 	{
 		cout << "ERROR: No se puede agrega la columna, no tiene nombre." << endl;
 		return ERROR;
-	}
+	}*/
 
 	historic->Encolar(nombreTabla);
 
@@ -197,8 +203,8 @@ TipoRetorno BaseDeDatos::join(Cadena nombreTabla1, Cadena nombreTabla2, Cadena n
 	int posPkTab1 = tab1.GetColumnas().Posicion(colPk);
 	int posPkTab2 = tab2.GetColumnas().Posicion(colPk);
 
-	Columna col1(tab1.GetColumnas().ElementoPos(posPkTab1));
-	Columna col2(tab2.GetColumnas().ElementoPos(posPkTab2));
+	Columna col1 = tab1.GetColumnas().ElementoPos(posPkTab1);
+	Columna col2 = tab2.GetColumnas().ElementoPos(posPkTab2);
 	
 	if (col1.GetNombre() != col2.GetNombre())
 	{
@@ -236,14 +242,16 @@ TipoRetorno BaseDeDatos::recent()
 	}
 	else
 	{
-		Cola<Tabla>* col = this->historic;
+		Cola<Tabla>* col;
+		col = this->historic->Clon();
+
 		ListaPos<Tabla>* lis = new ListaPosImp<Tabla>;
 
 		int len = col->CantidadElementos() > max ? max : col->CantidadElementos();
 
 		for (int i = 0; i < len; i++)
 		{
-			lis->AgregarFin(col->Desencolar());
+			lis->AgregarPpio(col->Desencolar());
 		}
 		for (unsigned int i = 0; i < lis->CantidadElementos(); i++)
 		{
