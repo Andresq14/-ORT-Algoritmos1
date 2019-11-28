@@ -13,26 +13,36 @@ class Tupla
 
 public:
 	
+	//Constructores
 	Tupla(ListaPos<Cadena>* dato);
-
 	Tupla(const Tupla& tupla);
 
+	//Destructor
 	virtual ~Tupla();
 	
-	// Operador de asignacion
+	//PRE:
+	//POS: Iguala la Tupla (this) con la Tupla pasada por parametro
 	Tupla& operator=(const Tupla& t);
 
 	// Operadores de comparacion 
 	bool operator==(const Tupla& t) const;
 
+	//PRE:
+	//POS: Retorna los datos de this, no se pueden modificar
 	const ListaPos<Cadena>* GetDatos() const;
+	
+	//PRE:
+	//POS: Retorna los datos de this, se pueden modificar
 	ListaPos<Cadena>* GetDatosInseguro() const;
 
 private:
 
 protected:
 	
+	//Constructor
 	Tupla();
+
+	//Atributos
 
 	ListaPos<Cadena>* datos;
 

@@ -85,10 +85,6 @@ const ListaPos<Columna>& Tabla::GetColumnas() const {
 	return *columns;
 }
 
-//PRE: Recibe nombre de la columna y calificador.
-//POST: Si la columna ya existe o si la misma es PK y en la tabla ya hay una columna con calificador PK, devuelve ERROR. 
-//      De lo contrario se agrega una nueva columna a la tabla.
-
 TipoRetorno Tabla::addCol(Cadena &nombreCol, CalifCol calificadorColumna) 
 {
 	if (columns->Existe(nombreCol))
@@ -114,9 +110,6 @@ TipoRetorno Tabla::addCol(Cadena &nombreCol, CalifCol calificadorColumna)
 	return OK;
 }
 
-//PRE: Recibe el nombre de la columna a eliminar.
-//POST: Si la columna existe se elimina la misma, de lo contrario devuelve ERROR.
-
 TipoRetorno Tabla::delCol(Cadena &nombreCol) 
 {
 	if (!columns->Existe(nombreCol))
@@ -135,9 +128,6 @@ TipoRetorno Tabla::delCol(Cadena &nombreCol)
 
 	return OK;
 }
-
-//PRE: 
-//POST:
 
 TipoRetorno Tabla::insertInto(Cadena &valoresTupla) 
 {
@@ -224,9 +214,6 @@ TipoRetorno Tabla::insertInto(Cadena &valoresTupla)
 	return ret;
 }
 
-//PRE: Se recibe la condicion de los datos a eliminar.
-//POST: Si existe datos que cumplan la condición se eliminan de la tabla, si en la condicion se recibe "" se elimian todos los datos de la tabla.  
-
 TipoRetorno Tabla::deleteFrom(Cadena& condicionEliminar)
 {
 	if (condicionEliminar == "")
@@ -278,9 +265,6 @@ TipoRetorno Tabla::deleteFrom(Cadena& condicionEliminar)
 	return OK;
 }
 
-//PRE:--
-//POST: Imprime el nombre de la tabla y los nombres de la columna de dicha tabla.
-
 void Tabla::printMetadata() 
 {
 	if (columns->EsVacia())
@@ -289,9 +273,6 @@ void Tabla::printMetadata()
 		for (Iterador<Columna> i = columns->GetIterador(); !i.EsFin();)
 			cout << i++ << endl;
 }
-
-//PRE: --
-//POST: Imprime los datos de la tabla, si existe. De lo contrario devuelve ERROR.
 
 void Tabla::printDataTable() 
 {
@@ -322,9 +303,6 @@ void Tabla::printDataTable()
 
 	delete sinRepetir;
 }
-
-//PRE: 
-//POST:
 
 TipoRetorno Tabla::join(Tabla &t1, Tabla &t2) 
 {

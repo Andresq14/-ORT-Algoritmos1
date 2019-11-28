@@ -11,23 +11,20 @@ class Columna
 {
 public:
 
-	//Constructor con parametros
+	//Constructores
 	Columna(Cadena& nombreCol, CalifCol& calificador);
-
 	Columna(Cadena& nombreCol);
-
 	Columna(CalifCol calificador);
-
-	//Constructor copia
 	Columna(const Columna& c);
 
 	//Destructor
 	virtual ~Columna();
 
-	// Operador de asignacion
+	//PRE:
+	//POST: Iguala la Columna (this) con la Columna pasada por parametro
 	Columna& operator=(const Columna& c);
 
-	// Operadores de comparacion (comparan el nombre de la tabla)
+	// Operadores de comparacion
 	bool operator==(const Columna& c) const;
 	bool operator!=(const Columna& c) const;
 	bool operator<(const Columna& c) const;
@@ -35,8 +32,12 @@ public:
 	bool operator<=(const Columna& c) const;
 	bool operator>=(const Columna& c) const;
 
-	// Retorna el nombre de la tabla
+	//PRE:
+	//POS: Retorna el nombre de this
 	const Cadena& GetNombre() const;
+
+	//PRE:
+	//POS: Retorna el calificador de this
 	const CalifCol& GetCalificador() const;
 	
 private:
