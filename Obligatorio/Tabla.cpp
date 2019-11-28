@@ -239,7 +239,7 @@ TipoRetorno Tabla::deleteFrom(Cadena& condicionEliminar)
 	}
 
 	int pos = columns->Posicion(col);
-	ListaPos<Tupla>* tuplaToDelete = new ListaPosImp<Tupla>();
+	ListaPos<Tupla>* tuplasBorrar = new ListaPosImp<Tupla>();
 
 	for (Iterador<Tupla> i = tuplas->GetIterador(); !i.EsFin(); i++)
 	{
